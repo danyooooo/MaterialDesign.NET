@@ -1,0 +1,54 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Material Design 3 Motion Tokens -->
+
+    <!-- Durations -->
+    <Duration x:Key="MdSysMotionDurationExpressiveFastSpatial">0:0:0.350</Duration>
+    <Duration x:Key="MdSysMotionDurationExpressiveDefaultSpatial">0:0:0.500</Duration>
+    <Duration x:Key="MdSysMotionDurationExpressiveSlowSpatial">0:0:0.650</Duration>
+    <Duration x:Key="MdSysMotionDurationExpressiveFastEffects">0:0:0.150</Duration>
+    <Duration x:Key="MdSysMotionDurationExpressiveDefaultEffects">0:0:0.200</Duration>
+    <Duration x:Key="MdSysMotionDurationExpressiveSlowEffects">0:0:0.300</Duration>
+
+    <Duration x:Key="MdSysMotionDurationStandardFastSpatial">0:0:0.350</Duration>
+    <Duration x:Key="MdSysMotionDurationStandardDefaultSpatial">0:0:0.500</Duration>
+    <Duration x:Key="MdSysMotionDurationStandardSlowSpatial">0:0:0.750</Duration>
+    <Duration x:Key="MdSysMotionDurationStandardFastEffects">0:0:0.150</Duration>
+    <Duration x:Key="MdSysMotionDurationStandardDefaultEffects">0:0:0.200</Duration>
+    <Duration x:Key="MdSysMotionDurationStandardSlowEffects">0:0:0.300</Duration>
+
+    <!-- TimeSpans (KeyTime) -->
+    <KeyTime x:Key="MdSysMotionTimeSpanExpressiveFastSpatial">0:0:0.350</KeyTime>
+    <KeyTime x:Key="MdSysMotionTimeSpanExpressiveDefaultSpatial">0:0:0.500</KeyTime>
+    <KeyTime x:Key="MdSysMotionTimeSpanExpressiveSlowSpatial">0:0:0.650</KeyTime>
+    <KeyTime x:Key="MdSysMotionTimeSpanExpressiveFastEffects">0:0:0.150</KeyTime>
+    <KeyTime x:Key="MdSysMotionTimeSpanExpressiveDefaultEffects">0:0:0.200</KeyTime>
+    <KeyTime x:Key="MdSysMotionTimeSpanExpressiveSlowEffects">0:0:0.300</KeyTime>
+
+    <KeyTime x:Key="MdSysMotionTimeSpanStandardFastSpatial">0:0:0.350</KeyTime>
+    <KeyTime x:Key="MdSysMotionTimeSpanStandardDefaultSpatial">0:0:0.500</KeyTime>
+    <KeyTime x:Key="MdSysMotionTimeSpanStandardSlowSpatial">0:0:0.750</KeyTime>
+    <KeyTime x:Key="MdSysMotionTimeSpanStandardFastEffects">0:0:0.150</KeyTime>
+    <KeyTime x:Key="MdSysMotionTimeSpanStandardDefaultEffects">0:0:0.200</KeyTime>
+    <KeyTime x:Key="MdSysMotionTimeSpanStandardSlowEffects">0:0:0.300</KeyTime>
+
+    <!-- KeySplines -->
+    <KeySpline x:Key="MdSysMotionSplineExpressiveFastSpatial" ControlPoint1="0.42,1.67" ControlPoint2="0.21,0.90" />
+    <KeySpline x:Key="MdSysMotionSplineExpressiveDefaultSpatial" ControlPoint1="0.38,1.21" ControlPoint2="0.22,1.00" />
+    <KeySpline x:Key="MdSysMotionSplineExpressiveSlowSpatial" ControlPoint1="0.39,1.29" ControlPoint2="0.35,0.98" />
+
+    <KeySpline x:Key="MdSysMotionSplineExpressiveFastEffects" ControlPoint1="0.31,0.94" ControlPoint2="0.34,1.00" />
+    <KeySpline x:Key="MdSysMotionSplineExpressiveDefaultEffects" ControlPoint1="0.34,0.80" ControlPoint2="0.34,1.00" />
+    <KeySpline x:Key="MdSysMotionSplineExpressiveSlowEffects" ControlPoint1="0.34,0.88" ControlPoint2="0.34,1.00" />
+
+    <KeySpline x:Key="MdSysMotionSplineStandardFastSpatial" ControlPoint1="0.27,1.06" ControlPoint2="0.18,1.00" />
+    <KeySpline x:Key="MdSysMotionSplineStandardDefaultSpatial" ControlPoint1="0.27,1.06" ControlPoint2="0.18,1.00" />
+    <KeySpline x:Key="MdSysMotionSplineStandardSlowSpatial" ControlPoint1="0.27,1.06" ControlPoint2="0.18,1.00" />
+
+    <KeySpline x:Key="MdSysMotionSplineStandardFastEffects" ControlPoint1="0.31,0.94" ControlPoint2="0.34,1.00" />
+    <KeySpline x:Key="MdSysMotionSplineStandardDefaultEffects" ControlPoint1="0.34,0.80" ControlPoint2="0.34,1.00" />
+    <KeySpline x:Key="MdSysMotionSplineStandardSlowEffects" ControlPoint1="0.34,0.88" ControlPoint2="0.34,1.00" />
+
+</ResourceDictionary>

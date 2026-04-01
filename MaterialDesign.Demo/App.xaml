@@ -1,0 +1,15 @@
+<Application x:Class="MaterialDesign.Demo.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MaterialDesign.Demo"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Merge the Theme (Colors) so they are available as resources -->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesign.NET;component/Themes/Generic.xaml" />
+                <!-- Generic.xaml includes Theme.xaml, Typography.xaml, Controls -->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

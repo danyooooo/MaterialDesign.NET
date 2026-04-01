@@ -1,0 +1,176 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MaterialDesign.NET.Controls">
+
+    <Style x:Key="MaterialDesignCheckboxStyle" TargetType="{x:Type CheckBox}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource MdSysColor.OnSurfaceVariant}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Foreground" Value="{DynamicResource MdSysColor.OnSurface}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <Grid x:Name="templateRoot" Background="Transparent" SnapsToDevicePixels="True">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="HoverRipple"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0.1" Duration="0:0:0.1" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="HoverRipple"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0.1" Duration="0:0:0.1" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="templateRoot"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0.38" Duration="0" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="CheckStates">
+                                <VisualState x:Name="Unchecked">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="activeBorder"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0" Duration="{DynamicResource MdSysMotionDurationStandardFastEffects}"/>
+                                        <DoubleAnimation Storyboard.TargetName="optionMark"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0" Duration="{DynamicResource MdSysMotionDurationStandardFastEffects}" />
+                                        <DoubleAnimation Storyboard.TargetName="indeterminateMark"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0" Duration="{DynamicResource MdSysMotionDurationStandardFastEffects}" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Checked">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="activeBorder"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1" Duration="{DynamicResource MdSysMotionDurationStandardFastEffects}"/>
+                                        <DoubleAnimation Storyboard.TargetName="optionMark"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1" Duration="{DynamicResource MdSysMotionDurationStandardFastEffects}" />
+                                        <DoubleAnimation Storyboard.TargetName="indeterminateMark"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0" Duration="{DynamicResource MdSysMotionDurationStandardFastEffects}" />
+                                        
+                                        <!-- Verify path data is Checkmark -->
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="optionMark" Storyboard.TargetProperty="Data">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Geometry>M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z</Geometry>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Indeterminate">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="activeBorder"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1" Duration="{DynamicResource MdSysMotionDurationStandardFastEffects}"/>
+                                        <DoubleAnimation Storyboard.TargetName="indeterminateMark"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1" Duration="{DynamicResource MdSysMotionDurationStandardFastEffects}" />
+                                        <DoubleAnimation Storyboard.TargetName="optionMark"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0" Duration="{DynamicResource MdSysMotionDurationStandardFastEffects}" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Grid  Width="40" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center">
+                             <local:Ripple x:Name="HoverRipple"
+                                           Opacity="0" 
+                                           Feedback="{DynamicResource MdSysColor.Primary}" 
+                                           CornerRadius="20" />
+                            
+                            <!-- 1. Base Outline (Unchecked) -->
+                            <Border x:Name="checkBoxBorder" 
+                                    Width="18" Height="18" 
+                                    Background="Transparent"
+                                    BorderBrush="{DynamicResource MdSysColor.OnSurfaceVariant}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    CornerRadius="2"
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center"/>
+
+                            <!-- 2. Hover Fill (Unchecked Hover) -->
+                            <Border x:Name="hoverBorder"
+                                    Width="18" Height="18"
+                                    Background="{DynamicResource MdSysColor.SurfaceContainerHighest}"
+                                    CornerRadius="2"
+                                    Opacity="0"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    IsHitTestVisible="False"/>
+
+                            <!-- 3. Active Fill (Checked/Indeterminate) -->
+                             <Border x:Name="activeBorder" 
+                                    Width="18" Height="18" 
+                                    Background="{DynamicResource MdSysColor.Primary}"
+                                    BorderBrush="{DynamicResource MdSysColor.Primary}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    CornerRadius="2"
+                                    Opacity="0"
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center"/>
+
+                            <!-- Checkmark Icon -->
+                            <Path x:Name="optionMark" 
+                                  Data="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" 
+                                  Fill="{DynamicResource MdSysColor.OnPrimary}"
+                                  Stretch="Uniform" 
+                                  Width="14" Height="14"
+                                  Opacity="0"
+                                  IsHitTestVisible="False"/>
+
+                             <!-- Indeterminate Icon -->
+                             <Rectangle x:Name="indeterminateMark" 
+                                        Fill="{DynamicResource MdSysColor.OnPrimary}"
+                                        Width="10" Height="2"
+                                        Opacity="0"
+                                        IsHitTestVisible="False"
+                                        HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+
+                        <ContentPresenter x:Name="contentPresenter" 
+                                          Grid.Column="1" 
+                                          Focusable="False" 
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                          Margin="{TemplateBinding Padding}" 
+                                          RecognizesAccessKey="True" 
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasContent" Value="true">
+                            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsChecked" Value="False"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="hoverBorder" Property="Opacity" Value="1"/>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

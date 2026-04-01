@@ -1,0 +1,105 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Primary -->
+    <Color x:Key="MdRefPalette.Primary0">#000000</Color>
+    <Color x:Key="MdRefPalette.Primary10">#21005d</Color>
+    <Color x:Key="MdRefPalette.Primary20">#381e72</Color>
+    <Color x:Key="MdRefPalette.Primary30">#4f378b</Color>
+    <Color x:Key="MdRefPalette.Primary40">#6750a4</Color>
+    <Color x:Key="MdRefPalette.Primary50">#7f67be</Color>
+    <Color x:Key="MdRefPalette.Primary60">#9a82db</Color>
+    <Color x:Key="MdRefPalette.Primary70">#b69df8</Color>
+    <Color x:Key="MdRefPalette.Primary80">#d0bcff</Color>
+    <Color x:Key="MdRefPalette.Primary90">#eaddff</Color>
+    <Color x:Key="MdRefPalette.Primary95">#f6edff</Color>
+    <Color x:Key="MdRefPalette.Primary99">#fffbfe</Color>
+    <Color x:Key="MdRefPalette.Primary100">#ffffff</Color>
+
+    <!-- Secondary -->
+    <Color x:Key="MdRefPalette.Secondary0">#000000</Color>
+    <Color x:Key="MdRefPalette.Secondary10">#1d192b</Color>
+    <Color x:Key="MdRefPalette.Secondary20">#332d41</Color>
+    <Color x:Key="MdRefPalette.Secondary30">#4a4458</Color>
+    <Color x:Key="MdRefPalette.Secondary40">#625b71</Color>
+    <Color x:Key="MdRefPalette.Secondary50">#7a7289</Color>
+    <Color x:Key="MdRefPalette.Secondary60">#958da5</Color>
+    <Color x:Key="MdRefPalette.Secondary70">#b0a7c0</Color>
+    <Color x:Key="MdRefPalette.Secondary80">#ccc2dc</Color>
+    <Color x:Key="MdRefPalette.Secondary90">#e8def8</Color>
+    <Color x:Key="MdRefPalette.Secondary95">#f6edff</Color>
+    <Color x:Key="MdRefPalette.Secondary99">#fffbfe</Color>
+    <Color x:Key="MdRefPalette.Secondary100">#ffffff</Color>
+
+    <!-- Tertiary -->
+    <Color x:Key="MdRefPalette.Tertiary0">#000000</Color>
+    <Color x:Key="MdRefPalette.Tertiary10">#31111d</Color>
+    <Color x:Key="MdRefPalette.Tertiary20">#492532</Color>
+    <Color x:Key="MdRefPalette.Tertiary30">#633b48</Color>
+    <Color x:Key="MdRefPalette.Tertiary40">#7d5260</Color>
+    <Color x:Key="MdRefPalette.Tertiary50">#986977</Color>
+    <Color x:Key="MdRefPalette.Tertiary60">#b58392</Color>
+    <Color x:Key="MdRefPalette.Tertiary70">#d29dac</Color>
+    <Color x:Key="MdRefPalette.Tertiary80">#efb8c8</Color>
+    <Color x:Key="MdRefPalette.Tertiary90">#ffd8e4</Color>
+    <Color x:Key="MdRefPalette.Tertiary95">#ffecf1</Color>
+    <Color x:Key="MdRefPalette.Tertiary99">#fffbfa</Color>
+    <Color x:Key="MdRefPalette.Tertiary100">#ffffff</Color>
+
+    <!-- Neutral -->
+    <Color x:Key="MdRefPalette.Neutral0">#000000</Color>
+    <Color x:Key="MdRefPalette.Neutral4">#0f0d13</Color>
+    <Color x:Key="MdRefPalette.Neutral6">#141218</Color>
+    <Color x:Key="MdRefPalette.Neutral10">#1d1b20</Color>
+    <Color x:Key="MdRefPalette.Neutral12">#211f26</Color>
+    <Color x:Key="MdRefPalette.Neutral17">#2b2930</Color>
+    <Color x:Key="MdRefPalette.Neutral20">#322f35</Color>
+    <Color x:Key="MdRefPalette.Neutral22">#36343b</Color>
+    <Color x:Key="MdRefPalette.Neutral24">#3b383e</Color>
+    <Color x:Key="MdRefPalette.Neutral30">#48464c</Color>
+    <Color x:Key="MdRefPalette.Neutral40">#605d64</Color>
+    <Color x:Key="MdRefPalette.Neutral50">#79767d</Color>
+    <Color x:Key="MdRefPalette.Neutral60">#938f96</Color>
+    <Color x:Key="MdRefPalette.Neutral70">#aea9b1</Color>
+    <Color x:Key="MdRefPalette.Neutral80">#cac5cd</Color>
+    <Color x:Key="MdRefPalette.Neutral87">#ded8e1</Color>
+    <Color x:Key="MdRefPalette.Neutral90">#e6e0e9</Color>
+    <Color x:Key="MdRefPalette.Neutral92">#ece6f0</Color>
+    <Color x:Key="MdRefPalette.Neutral94">#f3edf7</Color>
+    <Color x:Key="MdRefPalette.Neutral95">#f5eff7</Color>
+    <Color x:Key="MdRefPalette.Neutral96">#f7f2fa</Color>
+    <Color x:Key="MdRefPalette.Neutral98">#fef7ff</Color>
+    <Color x:Key="MdRefPalette.Neutral99">#fffbff</Color>
+    <Color x:Key="MdRefPalette.Neutral100">#ffffff</Color>
+
+    <!-- Neutral Variant -->
+    <Color x:Key="MdRefPalette.NeutralVariant0">#000000</Color>
+    <Color x:Key="MdRefPalette.NeutralVariant10">#1d1a22</Color>
+    <Color x:Key="MdRefPalette.NeutralVariant20">#322f37</Color>
+    <Color x:Key="MdRefPalette.NeutralVariant30">#49454f</Color>
+    <Color x:Key="MdRefPalette.NeutralVariant40">#605d66</Color>
+    <Color x:Key="MdRefPalette.NeutralVariant50">#79747e</Color>
+    <Color x:Key="MdRefPalette.NeutralVariant60">#938f99</Color>
+    <Color x:Key="MdRefPalette.NeutralVariant70">#aea9b4</Color>
+    <Color x:Key="MdRefPalette.NeutralVariant80">#cac4d0</Color>
+    <Color x:Key="MdRefPalette.NeutralVariant90">#e7e0ec</Color>
+    <Color x:Key="MdRefPalette.NeutralVariant95">#f5eefa</Color>
+    <Color x:Key="MdRefPalette.NeutralVariant99">#fffbfe</Color>
+    <Color x:Key="MdRefPalette.NeutralVariant100">#ffffff</Color>
+
+    <!-- Error -->
+    <Color x:Key="MdRefPalette.Error0">#000000</Color>
+    <Color x:Key="MdRefPalette.Error10">#410e0b</Color>
+    <Color x:Key="MdRefPalette.Error20">#601410</Color>
+    <Color x:Key="MdRefPalette.Error30">#8c1d18</Color>
+    <Color x:Key="MdRefPalette.Error40">#b3261e</Color>
+    <Color x:Key="MdRefPalette.Error50">#dc362e</Color>
+    <Color x:Key="MdRefPalette.Error60">#e46962</Color>
+    <Color x:Key="MdRefPalette.Error70">#ec928e</Color>
+    <Color x:Key="MdRefPalette.Error80">#f2b8b5</Color>
+    <Color x:Key="MdRefPalette.Error90">#f9dedc</Color>
+    <Color x:Key="MdRefPalette.Error95">#fceeee</Color>
+    <Color x:Key="MdRefPalette.Error99">#fffbf9</Color>
+    <Color x:Key="MdRefPalette.Error100">#ffffff</Color>
+
+</ResourceDictionary>

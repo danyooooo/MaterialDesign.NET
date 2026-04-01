@@ -1,86 +1,255 @@
-# Material Web
+# Material Design 3 for .NET WPF
 
-<img src="./docs/images/material-web.gif"
-  title="Material web components"
-  alt="A collection of Material web components"
-  style="border-radius: 32px">
+A complete implementation of Google's Material Design 3 specification for WPF applications, built from scratch in C#.
 
-[![Published on npm](https://img.shields.io/npm/v/%40material%2Fweb)](https://www.npmjs.com/package/@material/web)
-[![Join our Discord](https://img.shields.io/badge/discord-join%20chat-5865F2.svg?logo=discord&logoColor=fff&label=%23material)](https://lit.dev/discord/)
-[![Test status](https://github.com/material-components/material-web/actions/workflows/test.yml/badge.svg)](https://github.com/material-components/material-web/actions/workflows/test.yml)
-[![npm Downloads](https://img.shields.io/npm/dm/%40material%2Fweb?label=npm%20downloads)](https://npm-stat.com/charts.html?package=%40material%2Fweb)
-[![jsDelivr hits (npm)](https://img.shields.io/jsdelivr/npm/hm/%40material%2Fweb)](https://www.jsdelivr.com/package/npm/@material/web?tab=stats)
+![Material Design 3 Demo](screenshot.png)
 
-`@material/web` is a library of
-[web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components)<!-- {.external} -->
-that helps build beautiful and accessible web applications. It uses
-[Material 3](https://m3.material.io/)<!-- {.external} -->, the latest version of Google's
-open-source design system.
+## Overview
 
-**Note:
-[MWC is in maintenance mode pending new maintainers](https://github.com/material-components/material-web/discussions/5642).**
+This library provides a comprehensive set of Material Design 3 components and styles for WPF applications. Unlike other Material Design implementations, this library is built from the ground up following the official Material Design 3 guidelines.
 
-## Resources
+## Features
 
--   [Introduction](./docs/intro.md)
--   [Roadmap](./docs/roadmap.md)
--   [Component docs](./docs/components/)
--   [Bundle size](./docs/size.md)
--   [Browser support and FAQ](./docs/support.md)
+### Complete Design System
+- **Color System**: Full MD3 color palette with light theme support
+- **Typography**: Complete type scale (Display, Headline, Title, Body, Label)
+- **Shapes**: All corner radius tokens (ExtraSmall to ExtraLarge)
+- **Elevation**: 6 elevation levels with proper shadows
+- **Motion**: MD3 motion curves and durations
 
-## Quick start
+### Component Library (17+ Components)
 
-> Tip: Using Angular? We recommend using
-> [Angular Material](https://material.angular.io/)<!-- {.external} --> components
-> instead.
+#### Action Components
+- **Buttons**: Filled, Elevated, Tonal, Outlined, Text buttons
+- **Icon Buttons**: Standard, Filled, Filled Tonal, Outlined variants
+- **Floating Action Buttons**: Standard, Small, Large, Extended FABs
+- **Cards**: Elevated, Filled, Outlined cards with elevation support
 
-This code snippet is a buildless example that loads `@material/web` from a CDN.
-Check out the [quick start](./docs/quick-start.md) guide to install and build
-for production.
+#### Selection Components
+- **Checkboxes**: With proper states and animations
+- **Switches**: Material Design toggle switches
+- **Radio Buttons**: Proper grouping and states
+- **Sliders**: Continuous and discrete sliders
 
-<!-- LINT.IfChange -->
+#### Input Components
+- **Text Fields**: Filled and Outlined variants with floating labels
+- **ComboBox**: Filled and Outlined with proper dropdown behavior
+- **Chips**: Assist, Filter, Input, and Suggestion chips
 
-```html
-<head>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <script type="importmap">
-    {
-      "imports": {
-        "@material/web/": "https://esm.run/@material/web/"
-      }
-    }
-  </script>
-  <script type="module">
-    import '@material/web/all.js';
-    import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+#### Display Components
+- **Progress Indicators**: Linear and Circular progress bars
+- **Badges**: Small (dot) and Large (label) badges
+- **Dividers**: Horizontal and vertical dividers
+- **Lists**: Single-line, Two-line, Three-line list items
 
-    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
-  </script>
-</head>
-<body>
-  <h1 class="md-typescale-display-medium">Hello Material!</h1>
-  <form>
-    <p class="md-typescale-body-medium">Check out these controls in a form!</p>
-    <md-checkbox></md-checkbox>
-    <div>
-      <md-radio name="group"></md-radio>
-      <md-radio name="group"></md-radio>
-      <md-radio name="group"></md-radio>
-    </div>
+#### Navigation Components
+- **Navigation Drawer**: Standard navigation drawer with items
+- **Tabs**: Tab control with proper indicators
+- **Menus**: Context menus and menu bars
 
-    <md-outlined-text-field label="Favorite color" value="Purple"></md-outlined-text-field>
+#### Feedback Components
+- **Dialogs**: Modal dialogs with custom content support
+- **Snackbars**: Temporary messages with optional actions
+- **Tooltips**: Plain and rich tooltips
 
-    <md-outlined-button type="reset">Reset</md-outlined-button>
-  </form>
-  <style>
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
-    }
-  </style>
-</body>
+### Ready-to-Use Styles
+
+All components come with pre-defined styles following MD3 specifications:
+
+```xaml
+<!-- Filled Button -->
+<Button Content="Click Me" Style="{DynamicResource MaterialDesignFilledButtonStyle}" />
+
+<!-- Outlined Text Field -->
+<TextBox Style="{DynamicResource MaterialDesignOutlinedTextBoxStyle}" 
+         helpers:TextFieldAssist.Label="Label Text" />
+
+<!-- Elevated Card -->
+<Border Style="{DynamicResource MaterialDesignElevatedCardStyle}" Padding="16">
+    <TextBlock Text="Card Content" />
+</Border>
+
+<!-- FAB -->
+<Button Style="{DynamicResource MaterialDesignFABStyle}">
+    <controls:PackIcon Kind="Add" Width="24" Height="24"/>
+</Button>
 ```
 
-<!-- LINT.ThenChange(./g3doc/docs/quick-start.md) -->
+## Installation
+
+### Prerequisites
+- .NET 8.0 SDK or later
+- Windows 10/11
+- Visual Studio 2022 (recommended)
+
+### Setup
+
+1. **Clone or download** this repository
+
+2. **Build the library**:
+   ```bash
+   cd MaterialDesign.NET
+   dotnet build
+   ```
+
+3. **Reference the library** in your WPF project:
+   ```xml
+   <ProjectReference Include="..\MaterialDesign.NET\MaterialDesign.NET.csproj" />
+   ```
+
+4. **Merge the resource dictionary** in your App.xaml:
+   ```xaml
+   <Application.Resources>
+       <ResourceDictionary>
+           <ResourceDictionary.MergedDictionaries>
+               <ResourceDictionary Source="pack://application:,,,/MaterialDesign.NET;component/Themes/Generic.xaml" />
+           </ResourceDictionary.MergedDictionaries>
+       </ResourceDictionary>
+   </Application.Resources>
+   ```
+
+## Usage
+
+### Basic Setup
+
+```xaml
+<Window x:Class="YourApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:MaterialDesign.NET.Controls;assembly=MaterialDesign.NET"
+        xmlns:helpers="clr-namespace:MaterialDesign.NET.Helpers;assembly=MaterialDesign.NET"
+        Title="Your App">
+
+    <StackPanel Margin="24">
+        <!-- Typography -->
+        <TextBlock Text="Headline" Style="{DynamicResource MdSysTypescale.HeadlineLarge}" />
+        
+        <!-- Button -->
+        <Button Content="Click Me" 
+                Style="{DynamicResource MaterialDesignFilledButtonStyle}" 
+                Margin="0,16,0,0" />
+        
+        <!-- Text Field -->
+        <TextBox Style="{DynamicResource MaterialDesignFilledTextBoxStyle}"
+                 helpers:TextFieldAssist.Label="Enter text"
+                 Margin="0,16,0,0" />
+        
+        <!-- Icon -->
+        <controls:PackIcon Kind="Home" Width="24" Height="24" Margin="0,16,0,0" />
+    </StackPanel>
+</Window>
+```
+
+### Available Resources
+
+#### Typography Styles
+- `MdSysTypescale.DisplayLarge/Medium/Small`
+- `MdSysTypescale.HeadlineLarge/Medium/Small`
+- `MdSysTypescale.TitleLarge/Medium/Small`
+- `MdSysTypescale.BodyLarge/Medium/Small`
+- `MdSysTypescale.LabelLarge/Medium/Small`
+
+#### Color Resources
+- `MdSysColor.Primary/OnPrimary/PrimaryContainer/OnPrimaryContainer`
+- `MdSysColor.Secondary/OnSecondary/SecondaryContainer/OnSecondaryContainer`
+- `MdSysColor.Tertiary/OnTertiary/TertiaryContainer/OnTertiaryContainer`
+- `MdSysColor.Surface/OnSurface/SurfaceContainer`
+- `MdSysColor.Error/OnError/ErrorContainer/OnErrorContainer`
+- And many more...
+
+## Project Structure
+
+```
+material-design.NET/
+├── MaterialDesign.NET/          # Core library
+│   ├── Controls/                # All MD3 controls
+│   │   ├── Button/
+│   │   ├── TextField/
+│   │   ├── Card/
+│   │   ├── Dialog/
+│   │   └── ... (17+ components)
+│   ├── Helpers/                 # Attached properties and helpers
+│   │   ├── TextFieldAssist.cs
+│   │   ├── ChipAssist.cs
+│   │   └── ShadowAssist.cs
+│   ├── Converters/              # Value converters
+│   ├── Themes/                  # Design tokens
+│   │   ├── Colors/
+│   │   ├── Type/
+│   │   ├── Shapes/
+│   │   ├── Elevation/
+│   │   └── Motion/
+│   └── Resources/
+│       └── Fonts/
+├── MaterialDesign.Demo/         # Demo application
+│   ├── Pages/                   # Component showcase pages
+│   ├── Domain/                  # Demo view models
+│   └── Styles/
+└── docs/                        # Documentation
+```
+
+## Demo Application
+
+The solution includes a comprehensive demo application showcasing all components:
+
+```bash
+cd MaterialDesign.Demo
+dotnet run
+```
+
+The demo app includes:
+- 17 component showcase pages
+- Interactive examples
+- Source code snippets
+- Navigation drawer
+- Dialog demonstrations
+
+## Icon System
+
+### PackIcon (Built-in Paths)
+180+ icons with pre-defined path geometries:
+
+```xaml
+<controls:PackIcon Kind="Home" Width="24" Height="24" />
+<controls:PackIcon Kind="Settings" Foreground="Red" />
+```
+
+Available icon kinds include: Add, Edit, Delete, Home, Settings, Favorite, Search, and 170+ more.
+
+### SymbolIcon (Font-based)
+Alternative icon control using Material Symbols font:
+
+```xaml
+<controls:SymbolIcon Symbol="home" Variant="Outlined" FontSize="24" />
+<controls:SymbolIcon Symbol="favorite" Filled="True" />
+```
+
+### Development Guidelines
+- Follow MD3 specifications
+- Maintain consistency with existing components
+- Include XML documentation for public APIs
+- Test in the demo application
+
+## Roadmap
+
+- [ ] Dark theme support
+- [ ] Additional components (Date Picker, Time Picker, Data Table)
+- [ ] Animation improvements
+- [ ] Accessibility enhancements
+- [ ] More icon variants
+- [ ] Documentation website
+
+## Known Limitations
+
+- Currently only light theme is supported
+- Some advanced MD3 components not yet implemented
+- Icon library limited to 180+ icons (PackIcon)
+
+## License
+
+This project is licensed under the Apache-2.0 License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [Material Design 3 Guidelines](https://m3.material.io/)
+- [Material Symbols](https://fonts.google.com/icons)

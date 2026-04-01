@@ -1,0 +1,89 @@
+<UserControl x:Class="MaterialDesign.Demo.Pages.Tabs"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MaterialDesign.Demo.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="16" MaxWidth="800" HorizontalAlignment="Stretch">
+                <TextBlock Text="Tabs" Style="{DynamicResource MdSysTypescale.DisplayMedium}" Margin="0,0,0,24" />
+
+                <!-- Primary Tabs (Icon + Text) -->
+                <TextBlock Text="Primary Tabs (Icon + Text)" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                <TabControl Style="{DynamicResource MaterialDesignTabControlStyle}" Height="200">
+                    <TabItem Style="{DynamicResource MaterialDesignTabItemStyle}" Header="Video">
+                        <StackPanel>
+                            <TextBlock Text="Video Content" Margin="16" />
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Style="{DynamicResource MaterialDesignTabItemStyle}" IsSelected="True">
+                         <TabItem.Header>
+                            <StackPanel Orientation="Horizontal"><TextBlock Text="Photos" VerticalAlignment="Center" />
+                            </StackPanel>
+                         </TabItem.Header>
+                         <StackPanel>
+                            <TextBlock Text="Photos Content" Margin="16" />
+                         </StackPanel>
+                    </TabItem>
+                    <TabItem Style="{DynamicResource MaterialDesignTabItemStyle}">
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal"><TextBlock Text="Settings" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <StackPanel>
+                            <TextBlock Text="Settings Content" Margin="16" />
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
+
+                <Separator Margin="0,24" />
+
+                <!-- Primary Tabs (Text Only) -->
+                <TextBlock Text="Primary Tabs (Text Only)" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                <TabControl Style="{DynamicResource MaterialDesignTabControlStyle}" Height="150">
+                    <TabItem Style="{DynamicResource MaterialDesignTabItemStyle}" Header="Recent" IsSelected="True">
+                        <TextBlock Text="Recent Items" Margin="16" />
+                    </TabItem>
+                    <TabItem Style="{DynamicResource MaterialDesignTabItemStyle}" Header="Favorites">
+                        <TextBlock Text="Favorite Items" Margin="16" />
+                    </TabItem>
+                    <TabItem Style="{DynamicResource MaterialDesignTabItemStyle}" Header="Nearby">
+                        <TextBlock Text="Nearby Items" Margin="16" />
+                    </TabItem>
+                </TabControl>
+                
+                <Separator Margin="0,24" />
+
+                <!-- Scrollable Tabs Simulation (Just many tabs) -->
+                 <TextBlock Text="Scrollable Tabs (Simulated)" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                 <TabControl Style="{DynamicResource MaterialDesignTabControlStyle}" Height="150">
+                    <TabItem Style="{DynamicResource MaterialDesignTabItemStyle}" Header="Tab 1">
+                        <TextBlock Text="Content 1" Margin="16" />
+                    </TabItem>
+                    <TabItem Style="{DynamicResource MaterialDesignTabItemStyle}" Header="Tab 2" IsSelected="True">
+                        <TextBlock Text="Content 2" Margin="16" />
+                    </TabItem>
+                     <TabItem Style="{DynamicResource MaterialDesignTabItemStyle}" Header="Tab 3">
+                        <TextBlock Text="Content 3" Margin="16" />
+                    </TabItem>
+                     <TabItem Style="{DynamicResource MaterialDesignTabItemStyle}" Header="Tab 4">
+                        <TextBlock Text="Content 4" Margin="16" />
+                    </TabItem>
+                     <TabItem Style="{DynamicResource MaterialDesignTabItemStyle}" Header="Tab 5">
+                        <TextBlock Text="Content 5" Margin="16" />
+                    </TabItem>
+                     <TabItem Style="{DynamicResource MaterialDesignTabItemStyle}" Header="Tab 6">
+                        <TextBlock Text="Content 6" Margin="16" />
+                    </TabItem>
+                     <TabItem Style="{DynamicResource MaterialDesignTabItemStyle}" Header="Tab 7">
+                        <TextBlock Text="Content 7" Margin="16" />
+                    </TabItem>
+                </TabControl>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

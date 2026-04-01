@@ -1,0 +1,324 @@
+<UserControl x:Class="MaterialDesign.Demo.Pages.ComponentsOverview"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:MaterialDesign.NET.Controls;assembly=MaterialDesign.NET"
+             xmlns:helpers="clr-namespace:MaterialDesign.NET.Helpers;assembly=MaterialDesign.NET"
+             mc:Ignorable="d"
+             d:DesignHeight="1200" d:DesignWidth="1200">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="32">
+                <TextBlock Text="Components Overview" Style="{DynamicResource MdSysTypescale.DisplayMedium}" Margin="0,0,0,8"/>
+                <TextBlock Text="A complete reference of all Material Design 3 components available in this library" Style="{DynamicResource MdSysTypescale.BodyLarge}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" Margin="0,0,0,32"/>
+
+                <!-- Action Components -->
+                <TextBlock Text="Action Components" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Foreground="{DynamicResource MdSysColor.Primary}" Margin="0,0,0,16"/>
+                <Grid Margin="0,0,0,32">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Buttons -->
+                    <Border Grid.Column="0" Grid.Row="0" Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Padding="20" Margin="0,0,8,8">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,16"><TextBlock Text="Buttons" Style="{DynamicResource MdSysTypescale.TitleMedium}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel>
+                                <Button Content="Filled" Style="{DynamicResource MaterialDesignFilledButtonStyle}" Margin="0,0,0,8"/>
+                                <Button Content="Elevated" Style="{DynamicResource MaterialDesignElevatedButtonStyle}" Margin="0,0,0,8"/>
+                                <Button Content="Tonal" Style="{DynamicResource MaterialDesignTonalButtonStyle}" Margin="0,0,0,8"/>
+                                <Button Content="Outlined" Style="{DynamicResource MaterialDesignOutlinedButtonStyle}" Margin="0,0,0,8"/>
+                                <Button Content="Text Button" Style="{DynamicResource MaterialDesignTextButtonStyle}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Icon Buttons -->
+                    <Border Grid.Column="1" Grid.Row="0" Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Padding="20" Margin="8,0,8,8">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,16"><TextBlock Text="Icon Buttons" Style="{DynamicResource MdSysTypescale.TitleMedium}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <WrapPanel>
+                                <Button Style="{DynamicResource MaterialDesignIconButtonStyle}" Margin="0,0,8,8" ToolTip="Standard"></Button>
+                                <Button Style="{DynamicResource MaterialDesignFilledIconButtonStyle}" Margin="0,0,8,8" ToolTip="Filled"></Button>
+                                <Button Style="{DynamicResource MaterialDesignFilledTonalIconButtonStyle}" Margin="0,0,8,8" ToolTip="Filled Tonal"></Button>
+                                <Button Style="{DynamicResource MaterialDesignOutlinedIconButtonStyle}" Margin="0,0,8,8" ToolTip="Outlined"></Button>
+                            </WrapPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- FAB -->
+                    <Border Grid.Column="2" Grid.Row="0" Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Padding="20" Margin="8,0,0,8">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,16"><TextBlock Text="Floating Action Button" Style="{DynamicResource MdSysTypescale.TitleMedium}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <WrapPanel>
+                                <Button Style="{DynamicResource MaterialDesignFABStyle}" FontSize="56" Margin="0,0,8,8"></Button>
+                                <Button Style="{DynamicResource MaterialDesignSmallFABStyle}" FontSize="40" Margin="0,0,8,8"></Button>
+                                <Button Style="{DynamicResource MaterialDesignLargeFABStyle}" Width="96" Height="96" Margin="0,0,8,8"></Button>
+                            </WrapPanel>
+                            <Button Style="{DynamicResource MaterialDesignExtendedFABStyle}" Tag="Extended FAB" HorizontalAlignment="Left" MinWidth="160"></Button>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Chips -->
+                    <Border Grid.Column="0" Grid.Row="1" Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Padding="20" Margin="0,8,8,0">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,16"><TextBlock Text="Chips" Style="{DynamicResource MdSysTypescale.TitleMedium}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <WrapPanel>
+                                <Button Content="Assist" Style="{DynamicResource MaterialDesignAssistChipStyle}" Margin="0,0,4,4" helpers:ChipAssist.LeadingIcon="Link"/>
+                                <ToggleButton Content="Filter" Style="{DynamicResource MaterialDesignFilterChipStyle}" Margin="0,0,4,4" helpers:ChipAssist.LeadingIcon="Check"/>
+                                <Button Content="Input" Style="{DynamicResource MaterialDesignInputChipStyle}" Margin="0,0,4,4" helpers:ChipAssist.TrailingIcon="Close"/>
+                                <Button Content="Suggestion" Style="{DynamicResource MaterialDesignSuggestionChipStyle}" Margin="0,0,4,4"/>
+                            </WrapPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Menu -->
+                    <Border Grid.Column="1" Grid.Row="1" Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Padding="20" Margin="8,8,8,0">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,16"><TextBlock Text="Menu" Style="{DynamicResource MdSysTypescale.TitleMedium}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <Button Content="Open Menu" Style="{DynamicResource MaterialDesignFilledButtonStyle}" Margin="0,0,0,16">
+                                <Button.ContextMenu>
+                                    <ContextMenu Style="{DynamicResource MaterialDesignContextMenuStyle}">
+                                        <MenuItem Header="Cut" Style="{DynamicResource MaterialDesignMenuItemStyle}"/>
+                                        <MenuItem Header="Copy" Style="{DynamicResource MaterialDesignMenuItemStyle}"/>
+                                        <MenuItem Header="Paste" Style="{DynamicResource MaterialDesignMenuItemStyle}"/>
+                                        <Separator Style="{DynamicResource MaterialDesignMenuSeparatorStyle}"/>
+                                        <MenuItem Header="Delete" Style="{DynamicResource MaterialDesignMenuItemStyle}"/>
+                                    </ContextMenu>
+                                </Button.ContextMenu>
+                            </Button>
+                            <TextBlock Text="Right-click for context menu" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <!-- Selection Components -->
+                <TextBlock Text="Selection Components" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Foreground="{DynamicResource MdSysColor.Primary}" Margin="0,0,0,16"/>
+                <Grid Margin="0,0,0,32">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Selection Controls -->
+                    <Border Grid.Column="0" Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Padding="20" Margin="0,0,8,0">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,16"><TextBlock Text="Selection Controls" Style="{DynamicResource MdSysTypescale.TitleMedium}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel Margin="0,0,0,16">
+                                <CheckBox Content="Unchecked" Style="{DynamicResource MaterialDesignCheckboxStyle}" Margin="0,0,0,8"/>
+                                <CheckBox Content="Checked" Style="{DynamicResource MaterialDesignCheckboxStyle}" IsChecked="True" Margin="0,0,0,8"/>
+                                <CheckBox Content="Indeterminate" Style="{DynamicResource MaterialDesignCheckboxStyle}" IsChecked="{x:Null}" Margin="0,0,0,8"/>
+                                <CheckBox Content="Disabled" Style="{DynamicResource MaterialDesignCheckboxStyle}" IsEnabled="False" Margin="0,0,0,8"/>
+                            </StackPanel>
+                            <StackPanel Margin="0,0,0,16">
+                                <TextBlock Text="Switches" Style="{DynamicResource MdSysTypescale.LabelLarge}" Margin="0,0,0,8"/>
+                                <ToggleButton Content="Off" Style="{DynamicResource MaterialDesignSwitchStyle}" Margin="0,0,0,8"/>
+                                <ToggleButton Content="On" Style="{DynamicResource MaterialDesignSwitchStyle}" IsChecked="True" Margin="0,0,0,8"/>
+                                <ToggleButton Content="Disabled" Style="{DynamicResource MaterialDesignSwitchStyle}" IsEnabled="False" Margin="0,0,0,8"/>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Text="Radio Buttons" Style="{DynamicResource MdSysTypescale.LabelLarge}" Margin="0,0,0,8"/>
+                                <RadioButton Content="Option 1" Style="{DynamicResource MaterialDesignRadioButtonStyle}" GroupName="radio" Margin="0,0,0,8"/>
+                                <RadioButton Content="Option 2" Style="{DynamicResource MaterialDesignRadioButtonStyle}" GroupName="radio" IsChecked="True" Margin="0,0,0,8"/>
+                                <RadioButton Content="Option 3" Style="{DynamicResource MaterialDesignRadioButtonStyle}" GroupName="radio" Margin="0,0,0,8"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Sliders -->
+                    <Border Grid.Column="1" Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Padding="20" Margin="8,0,0,0">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,16"><TextBlock Text="Sliders" Style="{DynamicResource MdSysTypescale.TitleMedium}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel Margin="0,0,0,24">
+                                <TextBlock Text="Continuous" Style="{DynamicResource MdSysTypescale.LabelLarge}" Margin="0,0,0,8"/>
+                                <Slider Style="{DynamicResource MaterialDesignSliderStyle}" Minimum="0" Maximum="100" Value="50"/>
+                            </StackPanel>
+                            <StackPanel Margin="0,0,0,24">
+                                <TextBlock Text="Discrete (with ticks)" Style="{DynamicResource MdSysTypescale.LabelLarge}" Margin="0,0,0,8"/>
+                                <Slider Style="{DynamicResource MaterialDesignSliderStyle}" Minimum="0" Maximum="100" Value="60" TickFrequency="10" IsSnapToTickEnabled="True" TickPlacement="BottomRight"/>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Text="Disabled" Style="{DynamicResource MdSysTypescale.LabelLarge}" Margin="0,0,0,8"/>
+                                <Slider Style="{DynamicResource MaterialDesignSliderStyle}" Minimum="0" Maximum="100" Value="30" IsEnabled="False"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <!-- Display Components -->
+                <TextBlock Text="Display &amp; Feedback Components" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Foreground="{DynamicResource MdSysColor.Primary}" Margin="0,0,0,16"/>
+                <Grid Margin="0,0,0,32">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Cards -->
+                    <Border Grid.Column="0" Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Padding="20" Margin="0,0,8,0">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,16"><TextBlock Text="Cards" Style="{DynamicResource MdSysTypescale.TitleMedium}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <ContentControl Style="{DynamicResource MaterialDesignElevatedCardStyle}" Padding="16" Margin="0,0,0,8">
+                                <TextBlock Text="Elevated Card" Style="{DynamicResource MdSysTypescale.TitleSmall}"/>
+                            </ContentControl>
+                            <ContentControl Style="{DynamicResource MaterialDesignFilledCardStyle}" Padding="16" Margin="0,0,0,8">
+                                <TextBlock Text="Filled Card" Style="{DynamicResource MdSysTypescale.TitleSmall}"/>
+                            </ContentControl>
+                            <ContentControl Style="{DynamicResource MaterialDesignOutlinedCardStyle}" Padding="16">
+                                <TextBlock Text="Outlined Card" Style="{DynamicResource MdSysTypescale.TitleSmall}"/>
+                            </ContentControl>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Progress -->
+                    <Border Grid.Column="1" Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Padding="20" Margin="8,0,8,0">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,16"><TextBlock Text="Progress Indicators" Style="{DynamicResource MdSysTypescale.TitleMedium}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <TextBlock Text="Linear Indeterminate" Style="{DynamicResource MdSysTypescale.LabelLarge}" Margin="0,0,0,8"/>
+                            <ProgressBar Style="{DynamicResource MaterialDesignLinearProgressBar}" IsIndeterminate="True" Margin="0,0,0,16"/>
+                            <TextBlock Text="Linear Determinate" Style="{DynamicResource MdSysTypescale.LabelLarge}" Margin="0,0,0,8"/>
+                            <ProgressBar Style="{DynamicResource MaterialDesignLinearProgressBar}" Value="75" Margin="0,0,0,16"/>
+                            <TextBlock Text="Circular Indeterminate" Style="{DynamicResource MdSysTypescale.LabelLarge}" Margin="0,0,0,8"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Badges & Tooltips -->
+                    <Border Grid.Column="2" Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Padding="20" Margin="8,0,0,0">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,16"><TextBlock Text="Badges &amp; Tooltips" Style="{DynamicResource MdSysTypescale.TitleMedium}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,16">
+                                <controls:Badge Content="🔔" BadgeContent="3" Style="{DynamicResource MaterialDesignBadgeStyle}" Margin="0,0,16,0"/>
+                                <controls:Badge Content="📧" BadgeContent="99+" Style="{DynamicResource MaterialDesignLargeBadgeStyle}"/>
+                            </StackPanel>
+                            <StackPanel>
+                                <Button Content="Hover for tooltip" Style="{DynamicResource MaterialDesignFilledButtonStyle}" Margin="0,0,0,8" ToolTip="This is a simple tooltip"/>
+                                <Button Content="Rich tooltip" Style="{DynamicResource MaterialDesignTonalButtonStyle}">
+                                    <Button.ToolTip>
+                                        <ToolTip Style="{DynamicResource MaterialDesignToolTipStyle}">
+                                            <StackPanel>
+                                                <TextBlock Text="Tooltip Title" Style="{DynamicResource MdSysTypescale.TitleSmall}" FontWeight="Bold"/>
+                                                <TextBlock Text="Additional information" Style="{DynamicResource MdSysTypescale.BodySmall}"/>
+                                            </StackPanel>
+                                        </ToolTip>
+                                    </Button.ToolTip>
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <!-- Input Components -->
+                <TextBlock Text="Input Components" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Foreground="{DynamicResource MdSysColor.Primary}" Margin="0,0,0,16"/>
+                <Grid Margin="0,0,0,32">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Text Fields -->
+                    <Border Grid.Column="0" Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Padding="20" Margin="0,0,8,0">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,16"><TextBlock Text="Text Fields" Style="{DynamicResource MdSysTypescale.TitleMedium}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <TextBox Style="{DynamicResource MaterialDesignFilledTextBoxStyle}" helpers:TextFieldAssist.Label="Filled" Margin="0,0,0,12"/>
+                            <TextBox Style="{DynamicResource MaterialDesignFilledTextBoxStyle}" helpers:TextFieldAssist.Label="With leading icon" Margin="0,0,0,12" helpers:TextFieldAssist.LeadingIcon="Search"/>
+                            <TextBox Style="{DynamicResource MaterialDesignFilledTextBoxStyle}" helpers:TextFieldAssist.Label="With supporting text" Margin="0,0,0,12" helpers:TextFieldAssist.SupportingText="This is supporting text"/>
+                            <TextBox Style="{DynamicResource MaterialDesignOutlinedTextBoxStyle}" helpers:TextFieldAssist.Label="Outlined" Margin="0,0,0,8"/>
+                            <TextBox Style="{DynamicResource MaterialDesignOutlinedTextBoxStyle}" helpers:TextFieldAssist.Label="With trailing icon" helpers:TextFieldAssist.TrailingIcon="Visibility"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- ComboBox -->
+                    <Border Grid.Column="1" Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Padding="20" Margin="8,0,0,0">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,16"><TextBlock Text="Select (ComboBox)" Style="{DynamicResource MdSysTypescale.TitleMedium}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <ComboBox Style="{DynamicResource MaterialDesignFilledComboBoxStyle}" helpers:TextFieldAssist.Label="Filled Select" Margin="0,0,0,16">
+                                <ComboBoxItem Content="Option 1"/>
+                                <ComboBoxItem Content="Option 2"/>
+                                <ComboBoxItem Content="Option 3"/>
+                            </ComboBox>
+                            <ComboBox Style="{DynamicResource MaterialDesignOutlinedComboBoxStyle}" helpers:TextFieldAssist.Label="Outlined Select">
+                                <ComboBoxItem Content="Option 1"/>
+                                <ComboBoxItem Content="Option 2"/>
+                                <ComboBoxItem Content="Option 3"/>
+                            </ComboBox>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <!-- Navigation Components -->
+                <TextBlock Text="Navigation Components" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Foreground="{DynamicResource MdSysColor.Primary}" Margin="0,0,0,16"/>
+                <Grid Margin="0,0,0,32">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Tabs -->
+                    <Border Grid.Column="0" Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Padding="20" Margin="0,0,8,0">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,16"><TextBlock Text="Tabs" Style="{DynamicResource MdSysTypescale.TitleMedium}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <TabControl Style="{DynamicResource MaterialDesignTabControlStyle}" Margin="0,0,0,16">
+                                <TabItem Header="Tab 1" Style="{DynamicResource MaterialDesignTabItemStyle}">
+                                    <TextBlock Text="Content for Tab 1" Margin="16"/>
+                                </TabItem>
+                                <TabItem Header="Tab 2" Style="{DynamicResource MaterialDesignTabItemStyle}">
+                                    <TextBlock Text="Content for Tab 2" Margin="16"/>
+                                </TabItem>
+                                <TabItem Header="Tab 3" Style="{DynamicResource MaterialDesignTabItemStyle}">
+                                    <TextBlock Text="Content for Tab 3" Margin="16"/>
+                                </TabItem>
+                            </TabControl>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Lists -->
+                    <Border Grid.Column="1" Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Padding="20" Margin="8,0,0,0">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,16"><TextBlock Text="Lists" Style="{DynamicResource MdSysTypescale.TitleMedium}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <ListBox Style="{DynamicResource MaterialDesignListBoxStyle}" BorderThickness="0" ScrollViewer.CanContentScroll="False" Height="200">
+                                <ListBoxItem Style="{DynamicResource MaterialDesignListBoxItemStyle}">
+                                    <StackPanel Orientation="Horizontal"><TextBlock Text="Single-line list"/>
+                                    </StackPanel>
+                                </ListBoxItem>
+                                <ListBoxItem Style="{DynamicResource MaterialDesignTwoLineListBoxItemStyle}">
+                                    <StackPanel>
+                                        <TextBlock Text="Two-line list item"/>
+                                        <TextBlock Text="Supporting text line" Style="{DynamicResource MdSysTypescale.BodySmall}"/>
+                                    </StackPanel>
+                                </ListBoxItem>
+                                <ListBoxItem Style="{DynamicResource MaterialDesignThreeLineListBoxItemStyle}">
+                                    <StackPanel>
+                                        <TextBlock Text="Three-line list item"/>
+                                        <TextBlock Text="Supporting text line 1" Style="{DynamicResource MdSysTypescale.BodySmall}"/>
+                                        <TextBlock Text="Supporting text line 2" Style="{DynamicResource MdSysTypescale.BodySmall}"/>
+                                    </StackPanel>
+                                </ListBoxItem>
+                            </ListBox>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

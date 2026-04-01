@@ -1,0 +1,55 @@
+<UserControl x:Class="MaterialDesign.Demo.Pages.Dialogs"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="800">
+    <ScrollViewer>
+        <StackPanel Margin="32">
+            <!-- Header -->
+            <TextBlock Text="Dialogs" Style="{DynamicResource MdSysTypescale.DisplayMedium}" Margin="0,0,0,8" />
+            <TextBlock Text="Dialogs inform users about a task and can contain critical information, require decisions, or involve multiple tasks." 
+                       Style="{DynamicResource MdSysTypescale.BodyLarge}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" Margin="0,0,0,32" />
+
+            <!-- Basic Dialog -->
+            <StackPanel Margin="0,0,0,32">
+                <TextBlock Text="Basic Dialog" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Margin="0,0,0,16" />
+                <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="12" Padding="24">
+                    <StackPanel>
+                        <TextBlock Text="Basic dialogs interrupt users with urgent information, details, or actions." 
+                                   Style="{DynamicResource MdSysTypescale.BodyMedium}" Margin="0,0,0,16"/>
+                        
+                        <Button Content="Open Basic Dialog" 
+                                HorizontalAlignment="Left"
+                                Command="{Binding OpenDialogCommand}"
+                                CommandParameter="Basic Alert Dialog Content"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Alert Dialog (Complex Content) -->
+            <StackPanel Margin="0,0,0,32">
+                <TextBlock Text="Alert Dialog" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Margin="0,0,0,16" />
+                <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="12" Padding="24">
+                    <StackPanel>
+                        <TextBlock Text="Dialogs with custom content structure." 
+                                   Style="{DynamicResource MdSysTypescale.BodyMedium}" Margin="0,0,0,16"/>
+
+                        <!-- We pass a specific string 'Alert' which the ViewModel will interpret to show a more complex object 
+                             or we can pass a UIElement directly if allowed by MVVM (VM shouldn't know View types usually).
+                             Better: Pass a ViewModel or string identifier. 
+                             For this demo, we'll just pass a different string. 
+                        -->
+                        <Button Content="Open Alert Dialog" 
+                                HorizontalAlignment="Left" 
+                                Style="{DynamicResource MaterialDesignTonalButtonStyle}"
+                                Command="{Binding OpenDialogCommand}"
+                                CommandParameter="Alert"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

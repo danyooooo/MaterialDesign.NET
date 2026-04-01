@@ -1,0 +1,296 @@
+<UserControl x:Class="MaterialDesign.Demo.Pages.ShoppingExample"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:MaterialDesign.NET.Controls;assembly=MaterialDesign.NET"
+             xmlns:helpers="clr-namespace:MaterialDesign.NET.Helpers;assembly=MaterialDesign.NET"
+             mc:Ignorable="d"
+             d:DesignHeight="900" d:DesignWidth="1400">
+    <Grid Background="{DynamicResource MdSysColor.Surface}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="{DynamicResource MdSysColor.SurfaceContainer}" Padding="20,16" BorderBrush="{DynamicResource MdSysColor.OutlineVariant}" BorderThickness="0,0,0,1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Logo -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal"><TextBlock Text="ShopHub" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- Search -->
+                <Border Grid.Column="1" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}" CornerRadius="8" Padding="12,8" Margin="32,0" MaxWidth="500">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions><TextBox Grid.Column="1" Text="Search products..." Style="{DynamicResource MaterialDesignOutlinedTextBoxStyle}" BorderThickness="0" Background="Transparent" FontSize="14" Margin="8,0,0,0"/>
+                    </Grid>
+                </Border>
+
+                <!-- Actions -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <Button Style="{DynamicResource MaterialDesignIconButtonStyle}" ToolTip="Wishlist"></Button>
+                    <Button Style="{DynamicResource MaterialDesignIconButtonStyle}" ToolTip="Cart">
+                        <Grid><controls:Badge BadgeContent="5" Style="{DynamicResource MaterialDesignBadgeStyle}" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                        </Grid>
+                    </Button>
+                    <Border Width="40" Height="40" CornerRadius="20" Background="{DynamicResource MdSysColor.PrimaryContainer}" Margin="8,0">
+                        <TextBlock Text="JD" Style="{DynamicResource MdSysTypescale.TitleMedium}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource MdSysColor.OnPrimaryContainer}"/>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Main Content -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="32,24">
+                <!-- Categories -->
+                <StackPanel Margin="0,0,0,24">
+                    <WrapPanel>
+                        <ToggleButton Content="All" Style="{DynamicResource MaterialDesignFilterChipStyle}" IsChecked="True" Margin="0,0,8,8"/>
+                        <ToggleButton Content="Electronics" Style="{DynamicResource MaterialDesignFilterChipStyle}" Margin="0,0,8,8" helpers:ChipAssist.LeadingIcon="Smartphone"/>
+                        <ToggleButton Content="Fashion" Style="{DynamicResource MaterialDesignFilterChipStyle}" Margin="0,0,8,8" helpers:ChipAssist.LeadingIcon="Checkroom"/>
+                        <ToggleButton Content="Home" Style="{DynamicResource MaterialDesignFilterChipStyle}" Margin="0,0,8,8" helpers:ChipAssist.LeadingIcon="Home"/>
+                        <ToggleButton Content="Sports" Style="{DynamicResource MaterialDesignFilterChipStyle}" Margin="0,0,8,8" helpers:ChipAssist.LeadingIcon="Sports"/>
+                        <ToggleButton Content="Books" Style="{DynamicResource MaterialDesignFilterChipStyle}" Margin="0,0,8,8" helpers:ChipAssist.LeadingIcon="MenuBook"/>
+                    </WrapPanel>
+                </StackPanel>
+
+                <!-- Hero Banner -->
+                <Border Grid.Row="0" CornerRadius="{DynamicResource MdSysShape.CornerLarge}" Padding="48" Margin="0,0,0,32">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="{DynamicResource MdSysColor.Primary}" Offset="0"/>
+                            <GradientStop Color="{DynamicResource MdSysColor.PrimaryContainer}" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                            <TextBlock Text="Summer Sale" Style="{DynamicResource MdSysTypescale.DisplayMedium}" Foreground="{DynamicResource MdSysColor.OnPrimary}"/>
+                            <TextBlock Text="Up to 50% off on selected items" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Foreground="{DynamicResource MdSysColor.OnPrimaryContainer}" Margin="0,8,0,24"/>
+                            <Button Style="{DynamicResource MaterialDesignFilledButtonStyle}" Content="Shop Now" Width="140" HorizontalAlignment="Left">
+                                <Button.ContentTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal"><TextBlock Text="{Binding}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </Button.ContentTemplate>
+                            </Button>
+                        </StackPanel></Grid>
+                </Border>
+
+                <!-- Flash Sale -->
+                <StackPanel Margin="0,0,0,32">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,16"><TextBlock Text="Flash Sale" Style="{DynamicResource MdSysTypescale.TitleLarge}"/>
+                        <Border Background="{DynamicResource MdSysColor.ErrorContainer}" CornerRadius="12" Padding="8,4" Margin="12,0,0,0">
+                            <TextBlock Text="Ends in 04:32:15" Style="{DynamicResource MdSysTypescale.LabelLarge}" Foreground="{DynamicResource MdSysColor.OnErrorContainer}"/>
+                        </Border>
+                    </StackPanel>
+
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                        <StackPanel Orientation="Horizontal">
+                            <!-- Product Card 1 -->
+                            <Border Width="240" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Background="{DynamicResource MdSysColor.SurfaceContainer}" Margin="0,0,16,0">
+                                <StackPanel>
+                                    <Border Height="200" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}" CornerRadius="8,8,0,0"></Border>
+                                    <StackPanel Margin="16">
+                                        <TextBlock Text="Wireless Headphones" Style="{DynamicResource MdSysTypescale.TitleSmall}"/>
+                                        <StackPanel Orientation="Horizontal" Margin="0,4,0,8">
+                                            <TextBlock Text="$79.99" Style="{DynamicResource MdSysTypescale.BodyLarge}" Foreground="{DynamicResource MdSysColor.Error}"/>
+                                            <TextBlock Text="$129.99" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" TextDecorations="Strikethrough" Margin="8,0,0,0"/>
+                                        </StackPanel>
+                                        <Button Style="{DynamicResource MaterialDesignFilledButtonStyle}" Content="Add to Cart" HorizontalAlignment="Stretch">
+                                            <Button.ContentTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal"><TextBlock Text="{Binding}"/>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </Button.ContentTemplate>
+                                        </Button>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+
+                            <!-- Product Card 2 -->
+                            <Border Width="240" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Background="{DynamicResource MdSysColor.SurfaceContainer}" Margin="0,0,16,0">
+                                <StackPanel>
+                                    <Border Height="200" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}" CornerRadius="8,8,0,0"></Border>
+                                    <StackPanel Margin="16">
+                                        <TextBlock Text="Smart Watch Pro" Style="{DynamicResource MdSysTypescale.TitleSmall}"/>
+                                        <StackPanel Orientation="Horizontal" Margin="0,4,0,8">
+                                            <TextBlock Text="$199.99" Style="{DynamicResource MdSysTypescale.BodyLarge}" Foreground="{DynamicResource MdSysColor.Error}"/>
+                                            <TextBlock Text="$299.99" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" TextDecorations="Strikethrough" Margin="8,0,0,0"/>
+                                        </StackPanel>
+                                        <Button Style="{DynamicResource MaterialDesignFilledButtonStyle}" Content="Add to Cart" HorizontalAlignment="Stretch"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+
+                            <!-- Product Card 3 -->
+                            <Border Width="240" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Background="{DynamicResource MdSysColor.SurfaceContainer}" Margin="0,0,16,0">
+                                <StackPanel>
+                                    <Border Height="200" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}" CornerRadius="8,8,0,0"></Border>
+                                    <StackPanel Margin="16">
+                                        <TextBlock Text="Phone Case" Style="{DynamicResource MdSysTypescale.TitleSmall}"/>
+                                        <StackPanel Orientation="Horizontal" Margin="0,4,0,8">
+                                            <TextBlock Text="$24.99" Style="{DynamicResource MdSysTypescale.BodyLarge}" Foreground="{DynamicResource MdSysColor.Error}"/>
+                                            <TextBlock Text="$39.99" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" TextDecorations="Strikethrough" Margin="8,0,0,0"/>
+                                        </StackPanel>
+                                        <Button Style="{DynamicResource MaterialDesignFilledButtonStyle}" Content="Add to Cart" HorizontalAlignment="Stretch"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+
+                            <!-- Product Card 4 -->
+                            <Border Width="240" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Background="{DynamicResource MdSysColor.SurfaceContainer}">
+                                <StackPanel>
+                                    <Border Height="200" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}" CornerRadius="8,8,0,0"></Border>
+                                    <StackPanel Margin="16">
+                                        <TextBlock Text="Mechanical Keyboard" Style="{DynamicResource MdSysTypescale.TitleSmall}"/>
+                                        <StackPanel Orientation="Horizontal" Margin="0,4,0,8">
+                                            <TextBlock Text="$89.99" Style="{DynamicResource MdSysTypescale.BodyLarge}" Foreground="{DynamicResource MdSysColor.Error}"/>
+                                            <TextBlock Text="$149.99" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" TextDecorations="Strikethrough" Margin="8,0,0,0"/>
+                                        </StackPanel>
+                                        <Button Style="{DynamicResource MaterialDesignFilledButtonStyle}" Content="Add to Cart" HorizontalAlignment="Stretch"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </ScrollViewer>
+                </StackPanel>
+
+                <!-- Featured Products -->
+                <StackPanel Margin="0,0,0,32">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,16">
+                        <TextBlock Text="Featured Products" Style="{DynamicResource MdSysTypescale.TitleLarge}"/>
+                        <Button Style="{DynamicResource MaterialDesignTextButtonStyle}" Content="View All" Margin="12,0,0,0"/>
+                    </StackPanel>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Product 1 -->
+                        <Border Grid.Column="0" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Background="{DynamicResource MdSysColor.SurfaceContainer}" Margin="0,0,12,16">
+                            <StackPanel>
+                                <Border Height="180" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}" CornerRadius="8,8,0,0"></Border>
+                                <StackPanel Margin="12">
+                                    <TextBlock Text="Laptop Stand" Style="{DynamicResource MdSysTypescale.TitleSmall}"/>
+                                    <TextBlock Text="Ergonomic aluminum stand" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" Margin="0,0,0,8"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="$49.99" Style="{DynamicResource MdSysTypescale.BodyLarge}"/><TextBlock Text="4.8" Style="{DynamicResource MdSysTypescale.BodySmall}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Product 2 -->
+                        <Border Grid.Column="1" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Background="{DynamicResource MdSysColor.SurfaceContainer}" Margin="0,0,12,16">
+                            <StackPanel>
+                                <Border Height="180" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}" CornerRadius="8,8,0,0"></Border>
+                                <StackPanel Margin="12">
+                                    <TextBlock Text="Wireless Mouse" Style="{DynamicResource MdSysTypescale.TitleSmall}"/>
+                                    <TextBlock Text="Precision tracking" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" Margin="0,0,0,8"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="$34.99" Style="{DynamicResource MdSysTypescale.BodyLarge}"/><TextBlock Text="4.5" Style="{DynamicResource MdSysTypescale.BodySmall}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Product 3 -->
+                        <Border Grid.Column="2" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Background="{DynamicResource MdSysColor.SurfaceContainer}" Margin="0,0,12,16">
+                            <StackPanel>
+                                <Border Height="180" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}" CornerRadius="8,8,0,0"></Border>
+                                <StackPanel Margin="12">
+                                    <TextBlock Text="Tablet Stand" Style="{DynamicResource MdSysTypescale.TitleSmall}"/>
+                                    <TextBlock Text="Adjustable angle" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" Margin="0,0,0,8"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="$29.99" Style="{DynamicResource MdSysTypescale.BodyLarge}"/><TextBlock Text="4.6" Style="{DynamicResource MdSysTypescale.BodySmall}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Product 4 -->
+                        <Border Grid.Column="3" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Background="{DynamicResource MdSysColor.SurfaceContainer}">
+                            <StackPanel>
+                                <Border Height="180" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}" CornerRadius="8,8,0,0"></Border>
+                                <StackPanel Margin="12">
+                                    <TextBlock Text="USB-C Hub" Style="{DynamicResource MdSysTypescale.TitleSmall}"/>
+                                    <TextBlock Text="7-in-1 connectivity" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" Margin="0,0,0,8"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="$59.99" Style="{DynamicResource MdSysTypescale.BodyLarge}"/><TextBlock Text="4.9" Style="{DynamicResource MdSysTypescale.BodySmall}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </StackPanel>
+
+                <!-- Categories Grid -->
+                <StackPanel>
+                    <TextBlock Text="Shop by Category" Style="{DynamicResource MdSysTypescale.TitleLarge}" Margin="0,0,0,16"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="120"/>
+                            <RowDefinition Height="120"/>
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Column="0" Grid.Row="0" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Background="{DynamicResource MdSysColor.PrimaryContainer}" Margin="0,0,8,8">
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"><TextBlock Text="Phones" Style="{DynamicResource MdSysTypescale.TitleSmall}" Foreground="{DynamicResource MdSysColor.OnPrimaryContainer}" Margin="0,8,0,0"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Column="1" Grid.Row="0" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Background="{DynamicResource MdSysColor.SecondaryContainer}" Margin="4,0,4,8">
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"><TextBlock Text="Computers" Style="{DynamicResource MdSysTypescale.TitleSmall}" Foreground="{DynamicResource MdSysColor.OnSecondaryContainer}" Margin="0,8,0,0"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Column="2" Grid.Row="0" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Background="{DynamicResource MdSysColor.TertiaryContainer}" Margin="8,0,0,8">
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"><TextBlock Text="Audio" Style="{DynamicResource MdSysTypescale.TitleSmall}" Foreground="{DynamicResource MdSysColor.OnTertiaryContainer}" Margin="0,8,0,0"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Column="0" Grid.Row="1" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}" Margin="0,8,8,0">
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"><TextBlock Text="Wearables" Style="{DynamicResource MdSysTypescale.TitleSmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" Margin="0,8,0,0"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Column="1" Grid.Row="1" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}" Margin="4,8,4,0">
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"><TextBlock Text="Gaming" Style="{DynamicResource MdSysTypescale.TitleSmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" Margin="0,8,0,0"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Column="2" Grid.Row="1" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}" Margin="8,8,0,0">
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"><TextBlock Text="Cameras" Style="{DynamicResource MdSysTypescale.TitleSmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" Margin="0,8,0,0"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

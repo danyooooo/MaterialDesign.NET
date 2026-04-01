@@ -1,0 +1,105 @@
+<UserControl x:Class="MaterialDesign.Demo.Pages.Lists"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:MaterialDesign.Demo.Pages"
+             xmlns:md="clr-namespace:MaterialDesign.NET.Controls;assembly=MaterialDesign.NET"
+             xmlns:helpers="clr-namespace:MaterialDesign.NET.Helpers;assembly=MaterialDesign.NET"
+             mc:Ignorable="d"
+             d:DesignHeight="800" d:DesignWidth="800">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="16" MaxWidth="800" HorizontalAlignment="Left">
+                <TextBlock Text="Lists" Style="{DynamicResource MdSysTypescale.DisplayMedium}" Margin="0,0,0,24" />
+                <TextBlock Text="Lists are continuous, vertical indexes of text or images." 
+                           Style="{DynamicResource MdSysTypescale.BodyMedium}" Margin="0,0,0,32" />
+
+                <!-- Single Line Lists -->
+                <TextBlock Text="Single Line" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                <Border CornerRadius="12" Background="{DynamicResource MdSysColor.SurfaceContainer}" ClipToBounds="True" Margin="0,0,0,24">
+                    <ListBox Background="Transparent" BorderThickness="0">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem" BasedOn="{StaticResource MaterialDesignListBoxItem}" />
+                        </ListBox.ItemContainerStyle>
+                        
+                        <ListBoxItem Content="One line list item" />
+                        
+                        <ListBoxItem Content="List item with leading icon">
+                            <helpers:ListItemAssist.LeadingContent>
+                                <md:PackIcon Kind="Home" />
+                            </helpers:ListItemAssist.LeadingContent>
+                        </ListBoxItem>
+
+                        <ListBoxItem Content="List item with trailing icon">
+                             <helpers:ListItemAssist.LeadingContent>
+                                <md:PackIcon Kind="Calendar" />
+                            </helpers:ListItemAssist.LeadingContent>
+                            <helpers:ListItemAssist.TrailingContent>
+                                <md:PackIcon Kind="MenuOpen" />
+                            </helpers:ListItemAssist.TrailingContent>
+                        </ListBoxItem>
+
+                         <ListBoxItem Content="List item with trailing text">
+                            <helpers:ListItemAssist.TrailingSupportingText>100+</helpers:ListItemAssist.TrailingSupportingText>
+                        </ListBoxItem>
+                    </ListBox>
+                </Border>
+
+                <!-- Two Line Lists -->
+                <TextBlock Text="Two Line" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                <Border CornerRadius="12" Background="{DynamicResource MdSysColor.SurfaceContainer}" ClipToBounds="True" Margin="0,0,0,24">
+                    <ListBox Background="Transparent" BorderThickness="0">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem" BasedOn="{StaticResource MaterialDesignTwoLineListBoxItem}" />
+                        </ListBox.ItemContainerStyle>
+                        
+                        <ListBoxItem Content="Two-line item"
+                                     helpers:ListItemAssist.SupportingText="Secondary text" />
+                        
+                        <ListBoxItem Content="With Leading Avatar"
+                                     helpers:ListItemAssist.SupportingText="Supporting text">
+                            <helpers:ListItemAssist.LeadingContent>
+                                <!-- Avatar Placeholder -->
+                                <Border Width="40" Height="40" CornerRadius="20" Background="{DynamicResource MdSysColor.PrimaryContainer}">
+                                    <TextBlock Text="A" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource MdSysColor.OnPrimaryContainer}" FontWeight="Bold" />
+                                </Border>
+                            </helpers:ListItemAssist.LeadingContent>
+                        </ListBoxItem>
+
+                         <ListBoxItem Content="With Trailing Checkbox"
+                                     helpers:ListItemAssist.SupportingText="Check me out">
+                            <helpers:ListItemAssist.TrailingContent>
+                                <CheckBox />
+                            </helpers:ListItemAssist.TrailingContent>
+                        </ListBoxItem>
+                    </ListBox>
+                </Border>
+
+                <!-- Three Line Lists -->
+                <TextBlock Text="Three Line" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                <Border CornerRadius="12" Background="{DynamicResource MdSysColor.SurfaceContainer}" ClipToBounds="True" Margin="0,0,0,24">
+                    <ListBox Background="Transparent" BorderThickness="0">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem" BasedOn="{StaticResource MaterialDesignThreeLineListBoxItem}" />
+                        </ListBox.ItemContainerStyle>
+                        
+                        <ListBoxItem Content="Three-line item"
+                                     helpers:ListItemAssist.SupportingText="Secondary text that is long enough to wrap to the third line if the container width is constrained, demonstrating multi-line support." />
+                        
+                        <ListBoxItem Content="With Video Thumbnail"
+                                     helpers:ListItemAssist.SupportingText="Video description goes here. It provides more detail about the content.">
+                            <helpers:ListItemAssist.LeadingContent>
+                                 <Border Width="100" Height="56" CornerRadius="4" Background="Black">
+                                     <md:PackIcon Kind="VideoLabel" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+                                 </Border>
+                            </helpers:ListItemAssist.LeadingContent>
+                             <helpers:ListItemAssist.TrailingSupportingText>12:45</helpers:ListItemAssist.TrailingSupportingText>
+                        </ListBoxItem>
+                    </ListBox>
+                </Border>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

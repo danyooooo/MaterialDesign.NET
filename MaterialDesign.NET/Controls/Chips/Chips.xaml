@@ -1,0 +1,212 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MaterialDesign.NET.Controls"
+                    xmlns:helpers="clr-namespace:MaterialDesign.NET.Helpers">
+
+    <!-- Base Chip Style (Button) -->
+    <Style x:Key="MaterialDesignChipBaseStyle" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="32" />
+        <Setter Property="Padding" Value="16,0" /> <!-- Default padding -->
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{DynamicResource MdSysColor.Outline}" />
+        <Setter Property="Foreground" Value="{DynamicResource MdSysColor.OnSurfaceVariant}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Bd"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="8"> <!-- CornerSmall -->
+                         <local:Ripple CornerRadius="8"
+                                       Feedback="{TemplateBinding Foreground}">
+                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{TemplateBinding Padding}">
+                                 <!-- Leading Icon -->
+                                 <local:PackIcon Kind="{Binding Path=(helpers:ChipAssist.LeadingIcon), RelativeSource={RelativeSource TemplatedParent}}"
+                                                 Width="18" Height="18"
+                                                 Margin="0,0,8,0"
+                                                 VerticalAlignment="Center">
+                                     <local:PackIcon.Style>
+                                         <Style TargetType="local:PackIcon">
+                                             <Style.Triggers>
+                                                 <DataTrigger Binding="{Binding Path=(helpers:ChipAssist.LeadingIcon), RelativeSource={RelativeSource TemplatedParent}}" Value="None">
+                                                     <Setter Property="Visibility" Value="Collapsed" />
+                                                     <Setter Property="Margin" Value="0" />
+                                                 </DataTrigger>
+                                             </Style.Triggers>
+                                         </Style>
+                                     </local:PackIcon.Style>
+                                 </local:PackIcon>
+
+                                 <!-- Content -->
+                                 <ContentPresenter VerticalAlignment="Center" />
+
+                                 <!-- Trailing Icon (Independent Button) -->
+                                 <Button x:Name="TrailingIconBtn"
+                                         Width="18" Height="18"
+                                         Margin="8,0,0,0"
+                                         VerticalAlignment="Center"
+                                         Background="Transparent"
+                                         BorderThickness="0"
+                                         Cursor="Hand"
+                                         Focusable="False"
+                                         Padding="0"
+                                         HorizontalContentAlignment="Center"
+                                         VerticalContentAlignment="Center"
+                                         Command="{Binding Path=(helpers:ChipAssist.TrailingIconCommand), RelativeSource={RelativeSource TemplatedParent}}"
+                                         CommandParameter="{Binding Path=(helpers:ChipAssist.TrailingIconCommandParameter), RelativeSource={RelativeSource TemplatedParent}}">
+                                     <Button.Template>
+                                         <ControlTemplate TargetType="Button">
+                                             <Border Background="Transparent" CornerRadius="9">
+                                                 <local:Ripple CornerRadius="9" Feedback="{TemplateBinding Foreground}">
+                                                     <local:PackIcon Kind="{Binding Path=(helpers:ChipAssist.TrailingIcon), RelativeSource={RelativeSource TemplatedParent}}"
+                                                                     Width="18" Height="18"
+                                                                     VerticalAlignment="Center"
+                                                                     Foreground="{TemplateBinding Foreground}">
+                                                         <local:PackIcon.Style>
+                                                             <Style TargetType="local:PackIcon">
+                                                                 <Style.Triggers>
+                                                                     <DataTrigger Binding="{Binding Path=(helpers:ChipAssist.TrailingIcon), RelativeSource={RelativeSource TemplatedParent}}" Value="None">
+                                                                         <Setter Property="Visibility" Value="Collapsed" />
+                                                                         <Setter Property="Margin" Value="0" />
+                                                                     </DataTrigger>
+                                                                 </Style.Triggers>
+                                                             </Style>
+                                                         </local:PackIcon.Style>
+                                                     </local:PackIcon>
+                                                 </local:Ripple>
+                                             </Border>
+                                         </ControlTemplate>
+                                     </Button.Template>
+                                     <Button.Style>
+                                         <Style TargetType="Button">
+                                             <Setter Property="Visibility" Value="Visible" />
+                                             <Style.Triggers>
+                                                 <DataTrigger Binding="{Binding Path=(helpers:ChipAssist.TrailingIcon), RelativeSource={RelativeSource TemplatedParent}}" Value="None">
+                                                     <Setter Property="Visibility" Value="Collapsed" />
+                                                 </DataTrigger>
+                                             </Style.Triggers>
+                                         </Style>
+                                     </Button.Style>
+                                 </Button>
+                             </StackPanel>
+                         </local:Ripple>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <!-- Hover -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                             <Setter Property="Background" Value="{DynamicResource MdSysColor.SurfaceContainerLow}" /> <!-- Subtle hover fill -->
+                             <Setter Property="BorderBrush" Value="{DynamicResource MdSysColor.OnSurfaceVariant}" />
+                             <Setter Property="Foreground" Value="{DynamicResource MdSysColor.OnSurface}" />
+                        </Trigger>
+                        <!-- Disabled -->
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.38" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Assist Chip (Elevated or Outlined Action) -->
+    <Style x:Key="MaterialDesignAssistChipStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignChipBaseStyle}">
+          <!-- Default is Outlined per Base -->
+    </Style>
+
+    <!-- Filter Chip (ToggleButton) -->
+    <Style x:Key="MaterialDesignFilterChipStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Height" Value="32" />
+        <Setter Property="Padding" Value="16,0" /> 
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{DynamicResource MdSysColor.Outline}" />
+        <Setter Property="Foreground" Value="{DynamicResource MdSysColor.OnSurfaceVariant}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border x:Name="Bd" 
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="8">
+                         <local:Ripple CornerRadius="8"
+                                       Feedback="{TemplateBinding Foreground}">
+                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{TemplateBinding Padding}">
+                                 <!-- Selected Icon (Check) -->
+                                 <local:PackIcon Kind="Check" 
+                                                 Width="18" Height="18" 
+                                                 Margin="0,0,8,0"
+                                                 VerticalAlignment="Center"
+                                                 x:Name="CheckIcon"
+                                                 Visibility="Collapsed"/>
+                                 
+                                 <!-- Leading Icon (Hidden when Selected if we want replacement behavior, or kept? Spec says replace with check usually) -->
+                                 <local:PackIcon Kind="{Binding Path=(helpers:ChipAssist.LeadingIcon), RelativeSource={RelativeSource TemplatedParent}}" 
+                                                 Width="18" Height="18" 
+                                                 Margin="0,0,8,0"
+                                                 VerticalAlignment="Center"
+                                                 x:Name="LeadingIcon">
+                                     <local:PackIcon.Style>
+                                         <Style TargetType="local:PackIcon">
+                                             <Style.Triggers>
+                                                 <DataTrigger Binding="{Binding Path=(helpers:ChipAssist.LeadingIcon), RelativeSource={RelativeSource TemplatedParent}}" Value="None">
+                                                     <Setter Property="Visibility" Value="Collapsed" />
+                                                     <Setter Property="Margin" Value="0" />
+                                                 </DataTrigger>
+                                             </Style.Triggers>
+                                         </Style>
+                                     </local:PackIcon.Style>
+                                 </local:PackIcon>
+
+                                 <!-- Content -->
+                                 <ContentPresenter VerticalAlignment="Center" />
+
+                             </StackPanel>
+                         </local:Ripple>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <!-- Checked State -->
+                        <Trigger Property="IsChecked" Value="True">
+                             <Setter Property="Background" Value="{DynamicResource MdSysColor.SecondaryContainer}" />
+                             <Setter Property="BorderThickness" Value="0" />
+                             <Setter Property="Foreground" Value="{DynamicResource MdSysColor.OnSecondaryContainer}" />
+                             <Setter TargetName="CheckIcon" Property="Visibility" Value="Visible" />
+                             <Setter TargetName="LeadingIcon" Property="Visibility" Value="Collapsed" /> <!-- Replace leading icon with Check -->
+                        </Trigger>
+                        
+                        <!-- Hover Unchecked -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True" />
+                                <Condition Property="IsChecked" Value="False" />
+                            </MultiTrigger.Conditions>
+                             <Setter Property="Background" Value="{DynamicResource MdSysColor.SurfaceContainerLow}" />
+                             <Setter Property="Foreground" Value="{DynamicResource MdSysColor.OnSurface}" />
+                        </MultiTrigger>
+
+                        <!-- Disabled -->
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.38" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Input Chip (Compact, Deletable) -->
+    <Style x:Key="MaterialDesignInputChipStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignChipBaseStyle}">
+        <!-- Trailing Icon should likely be 'Close' and clickable without triggering main button? 
+             For simple implementation: The whole chip is a button. The trailing icon is visual. 
+             If we want independent trailing click, we need a custom control or a template with a nested button.
+             Let's stick to visual trailing icon for now. -->
+    </Style>
+
+    <!-- Suggestion Chip (Action) -->
+    <Style x:Key="MaterialDesignSuggestionChipStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignChipBaseStyle}">
+          <!-- Similar to Assist but usually no leading icon or different intent. Styles are mostly same visually in outline mode. -->
+    </Style>
+
+</ResourceDictionary>

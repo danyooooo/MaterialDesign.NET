@@ -1,0 +1,23 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="MaterialDesignDivider" TargetType="{x:Type Separator}">
+        <Setter Property="Background" Value="{DynamicResource MdSysColor.OutlineVariant}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource MdSysColor.OutlineVariant}" />
+        <Setter Property="MinHeight" Value="1"/>
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Separator}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Height="1"
+                            SnapsToDevicePixels="true"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type Separator}" BasedOn="{StaticResource MaterialDesignDivider}" />
+    
+</ResourceDictionary>

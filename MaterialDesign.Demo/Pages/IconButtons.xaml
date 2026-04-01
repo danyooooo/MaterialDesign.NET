@@ -1,0 +1,251 @@
+<UserControl x:Class="MaterialDesign.Demo.Pages.IconButtons"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:helpers="clr-namespace:MaterialDesign.NET.Helpers;assembly=MaterialDesign.NET"
+             xmlns:controls="clr-namespace:MaterialDesign.NET.Controls;assembly=MaterialDesign.NET"
+             mc:Ignorable="d"
+             d:DesignHeight="1200" d:DesignWidth="1000">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="32">
+            <TextBlock Text="Icon Buttons &amp; Symbols" Style="{DynamicResource MdSysTypescale.DisplaySmall}" Margin="0,0,0,8" />
+            <TextBlock Text="Icon buttons and Material Symbols font variants" Style="{DynamicResource MdSysTypescale.BodyLarge}" Margin="0,0,0,32" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" TextWrapping="Wrap" />
+
+            <!-- Material Symbols Font Variants -->
+            <TextBlock Text="Material Symbols Font Variants" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Foreground="{DynamicResource MdSysColor.Primary}" Margin="0,0,0,16"/>
+            <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Padding="24" Margin="0,0,0,32">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Outlined -->
+                    <StackPanel Grid.Column="0" Grid.Row="0" Margin="0,0,16,16">
+                        <TextBlock Text="Outlined" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                            <controls:SymbolIcon Symbol="home" Variant="Outlined" FontSize="32" Margin="0,0,12,0"/>
+                            <TextBlock Text="home" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.BodyMedium}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                            <controls:SymbolIcon Symbol="settings" Variant="Outlined" FontSize="32" Margin="0,0,12,0"/>
+                            <TextBlock Text="settings" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.BodyMedium}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                            <controls:SymbolIcon Symbol="favorite" Variant="Outlined" FontSize="32" Margin="0,0,12,0"/>
+                            <TextBlock Text="favorite" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.BodyMedium}"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Rounded -->
+                    <StackPanel Grid.Column="1" Grid.Row="0" Margin="0,0,16,16">
+                        <TextBlock Text="Rounded" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                            <controls:SymbolIcon Symbol="home" Variant="Rounded" FontSize="32" Margin="0,0,12,0"/>
+                            <TextBlock Text="home" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.BodyMedium}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                            <controls:SymbolIcon Symbol="settings" Variant="Rounded" FontSize="32" Margin="0,0,12,0"/>
+                            <TextBlock Text="settings" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.BodyMedium}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                            <controls:SymbolIcon Symbol="favorite" Variant="Rounded" FontSize="32" Margin="0,0,12,0"/>
+                            <TextBlock Text="favorite" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.BodyMedium}"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Sharp -->
+                    <StackPanel Grid.Column="2" Grid.Row="0" Margin="0,0,16,16">
+                        <TextBlock Text="Sharp" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                            <controls:SymbolIcon Symbol="home" Variant="Sharp" FontSize="32" Margin="0,0,12,0"/>
+                            <TextBlock Text="home" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.BodyMedium}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                            <controls:SymbolIcon Symbol="settings" Variant="Sharp" FontSize="32" Margin="0,0,12,0"/>
+                            <TextBlock Text="settings" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.BodyMedium}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                            <controls:SymbolIcon Symbol="favorite" Variant="Sharp" FontSize="32" Margin="0,0,12,0"/>
+                            <TextBlock Text="favorite" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.BodyMedium}"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Outlined Filled -->
+                    <StackPanel Grid.Column="0" Grid.Row="1" Margin="0,0,16,0">
+                        <TextBlock Text="Outlined (Filled)" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                            <controls:SymbolIcon Symbol="home" Variant="Outlined" Filled="True" FontSize="32" Margin="0,0,12,0"/>
+                            <TextBlock Text="home (filled)" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.BodyMedium}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                            <controls:SymbolIcon Symbol="settings" Variant="Outlined" Filled="True" FontSize="32" Margin="0,0,12,0"/>
+                            <TextBlock Text="settings (filled)" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.BodyMedium}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                            <controls:SymbolIcon Symbol="favorite" Variant="Outlined" Filled="True" FontSize="32" Margin="0,0,12,0"/>
+                            <TextBlock Text="favorite (filled)" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.BodyMedium}"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Rounded Filled -->
+                    <StackPanel Grid.Column="1" Grid.Row="1" Margin="0,0,16,0">
+                        <TextBlock Text="Rounded (Filled)" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                            <controls:SymbolIcon Symbol="home" Variant="Rounded" Filled="True" FontSize="32" Margin="0,0,12,0"/>
+                            <TextBlock Text="home (filled)" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.BodyMedium}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                            <controls:SymbolIcon Symbol="settings" Variant="Rounded" Filled="True" FontSize="32" Margin="0,0,12,0"/>
+                            <TextBlock Text="settings (filled)" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.BodyMedium}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                            <controls:SymbolIcon Symbol="favorite" Variant="Rounded" Filled="True" FontSize="32" Margin="0,0,12,0"/>
+                            <TextBlock Text="favorite (filled)" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.BodyMedium}"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Sharp Filled -->
+                    <StackPanel Grid.Column="2" Grid.Row="1" Margin="0,0,16,0">
+                        <TextBlock Text="Sharp (Filled)" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                            <controls:SymbolIcon Symbol="home" Variant="Sharp" Filled="True" FontSize="32" Margin="0,0,12,0"/>
+                            <TextBlock Text="home (filled)" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.BodyMedium}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                            <controls:SymbolIcon Symbol="settings" Variant="Sharp" Filled="True" FontSize="32" Margin="0,0,12,0"/>
+                            <TextBlock Text="settings (filled)" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.BodyMedium}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                            <controls:SymbolIcon Symbol="favorite" Variant="Sharp" Filled="True" FontSize="32" Margin="0,0,12,0"/>
+                            <TextBlock Text="favorite (filled)" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.BodyMedium}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Icon Sizes -->
+            <TextBlock Text="Icon Sizes" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Foreground="{DynamicResource MdSysColor.Primary}" Margin="0,0,0,16"/>
+            <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Padding="24" Margin="0,0,0,32">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <controls:SymbolIcon Symbol="home" Variant="Outlined" FontSize="16" Margin="16,0"/>
+                    <controls:SymbolIcon Symbol="home" Variant="Outlined" FontSize="24" Margin="16,0"/>
+                    <controls:SymbolIcon Symbol="home" Variant="Outlined" FontSize="32" Margin="16,0"/>
+                    <controls:SymbolIcon Symbol="home" Variant="Outlined" FontSize="40" Margin="16,0"/>
+                    <controls:SymbolIcon Symbol="home" Variant="Outlined" FontSize="48" Margin="16,0"/>
+                    <controls:SymbolIcon Symbol="home" Variant="Outlined" FontSize="64" Margin="16,0"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Standard Icon Buttons -->
+            <TextBlock Text="Icon Button Styles" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Foreground="{DynamicResource MdSysColor.Primary}" Margin="0,0,0,16"/>
+            <StackPanel Margin="0,0,0,32">
+                <TextBlock Text="Standard Icon Button" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="12" Padding="24">
+                    <WrapPanel>
+                         <StackPanel Margin="0,0,24,0">
+                            <TextBlock Text="Enabled" Style="{DynamicResource MdSysTypescale.LabelLarge}" Margin="0,0,0,8"/>
+                             <Button Style="{DynamicResource MaterialDesignIconButtonStyle}">
+                                 <controls:PackIcon Kind="Settings" Width="24" Height="24"/>
+                             </Button>
+                        </StackPanel>
+                        <StackPanel Margin="0,0,24,0">
+                            <TextBlock Text="Disabled" Style="{DynamicResource MdSysTypescale.LabelLarge}" Margin="0,0,0,8"/>
+                             <Button Style="{DynamicResource MaterialDesignIconButtonStyle}" IsEnabled="False">
+                                 <controls:PackIcon Kind="Settings" Width="24" Height="24"/>
+                             </Button>
+                        </StackPanel>
+                    </WrapPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Filled Icon Buttons -->
+            <StackPanel Margin="0,0,0,32">
+                <TextBlock Text="Filled Icon Button" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="12" Padding="24">
+                    <WrapPanel>
+                         <StackPanel Margin="0,0,24,0">
+                            <TextBlock Text="Enabled" Style="{DynamicResource MdSysTypescale.LabelLarge}" Margin="0,0,0,8"/>
+                             <Button Style="{DynamicResource MaterialDesignFilledIconButtonStyle}">
+                                 <controls:PackIcon Kind="Add" Width="24" Height="24"/>
+                             </Button>
+                        </StackPanel>
+                        <StackPanel Margin="0,0,24,0">
+                            <TextBlock Text="Disabled" Style="{DynamicResource MdSysTypescale.LabelLarge}" Margin="0,0,0,8"/>
+                             <Button Style="{DynamicResource MaterialDesignFilledIconButtonStyle}" IsEnabled="False">
+                                 <controls:PackIcon Kind="Add" Width="24" Height="24"/>
+                             </Button>
+                        </StackPanel>
+                    </WrapPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Tonal Icon Buttons -->
+            <StackPanel Margin="0,0,0,32">
+                <TextBlock Text="Filled Tonal Icon Button" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="12" Padding="24">
+                    <WrapPanel>
+                         <StackPanel Margin="0,0,24,0">
+                            <TextBlock Text="Enabled" Style="{DynamicResource MdSysTypescale.LabelLarge}" Margin="0,0,0,8"/>
+                             <Button Style="{DynamicResource MaterialDesignTonalIconButtonStyle}">
+                                 <controls:PackIcon Kind="Edit" Width="24" Height="24"/>
+                             </Button>
+                        </StackPanel>
+                        <StackPanel Margin="0,0,24,0">
+                            <TextBlock Text="Disabled" Style="{DynamicResource MdSysTypescale.LabelLarge}" Margin="0,0,0,8"/>
+                             <Button Style="{DynamicResource MaterialDesignTonalIconButtonStyle}" IsEnabled="False">
+                                 <controls:PackIcon Kind="Edit" Width="24" Height="24"/>
+                             </Button>
+                        </StackPanel>
+                    </WrapPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Outlined Icon Buttons -->
+            <StackPanel Margin="0,0,0,32">
+                <TextBlock Text="Outlined Icon Button" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="12" Padding="24">
+                    <WrapPanel>
+                         <StackPanel Margin="0,0,24,0">
+                            <TextBlock Text="Enabled" Style="{DynamicResource MdSysTypescale.LabelLarge}" Margin="0,0,0,8"/>
+                             <Button Style="{DynamicResource MaterialDesignOutlinedIconButtonStyle}">
+                                 <controls:PackIcon Kind="Delete" Width="24" Height="24"/>
+                             </Button>
+                        </StackPanel>
+                        <StackPanel Margin="0,0,24,0">
+                            <TextBlock Text="Disabled" Style="{DynamicResource MdSysTypescale.LabelLarge}" Margin="0,0,0,8"/>
+                             <Button Style="{DynamicResource MaterialDesignOutlinedIconButtonStyle}" IsEnabled="False">
+                                 <controls:PackIcon Kind="Delete" Width="24" Height="24"/>
+                             </Button>
+                        </StackPanel>
+                    </WrapPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Usage Example -->
+            <Border Background="{DynamicResource MdSysColor.SurfaceContainerHighest}" CornerRadius="{DynamicResource MdSysShape.CornerMedium}" Padding="24">
+                <StackPanel>
+                    <TextBlock Text="Usage Example" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16"/>
+                    <TextBox IsReadOnly="True" TextWrapping="Wrap" FontFamily="Consolas" FontSize="14" Background="Transparent" BorderThickness="0">
+&lt;!-- Using SymbolIcon with Material Symbols fonts --&gt;
+&lt;controls:SymbolIcon Symbol="home" Variant="Outlined" FontSize="24" /&gt;
+&lt;controls:SymbolIcon Symbol="favorite" Variant="Rounded" Filled="True" /&gt;
+
+&lt;!-- Using PackIcon (built-in paths) --&gt;
+&lt;controls:MaterialSymbolIcon Kind="Settings" FontSize="24" /&gt;
+
+&lt;!-- Using MaterialSymbols helper class --&gt;
+&lt;controls:SymbolIcon Symbol="{x:Static helpers:MaterialSymbols.Search}" /&gt;
+                    </TextBox>
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

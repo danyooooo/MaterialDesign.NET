@@ -1,0 +1,60 @@
+<UserControl x:Class="MaterialDesign.Demo.Pages.Tooltips"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MaterialDesign.Demo.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="16" MaxWidth="800" HorizontalAlignment="Left">
+                <TextBlock Text="Tooltips" Style="{DynamicResource MdSysTypescale.DisplayMedium}" Margin="0,0,0,24" />
+                <TextBlock Text="Tooltips provide text labels or short descriptions." 
+                           Style="{DynamicResource MdSysTypescale.BodyMedium}" Margin="0,0,0,32" />
+
+                <!-- Plain Tooltips -->
+                <TextBlock Text="Plain Tooltips" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,24">
+                    <Button Content="Hover Me" Margin="0,0,16,0">
+                        <Button.ToolTip>
+                            <ToolTip Style="{DynamicResource MaterialDesignToolTip}" Content="This is a plain tooltip" />
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button Content="Another One">
+                        <Button.ToolTip>
+                            <ToolTip Style="{DynamicResource MaterialDesignToolTip}" Content="Compact info" />
+                        </Button.ToolTip>
+                    </Button>
+                </StackPanel>
+
+                <!-- Rich Tooltips -->
+                <TextBlock Text="Rich Tooltips" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                 <StackPanel Orientation="Horizontal" Margin="0,0,0,24">
+                    <Button Content="Rich Info" Margin="0,0,16,0">
+                        <Button.ToolTip>
+                            <ToolTip Style="{DynamicResource MaterialDesignRichToolTip}" Tag="Rich Tooltip Title">
+                                <TextBlock Text="This tooltip has a title and supporting text to provide more context." 
+                                           TextWrapping="Wrap" MaxWidth="200" />
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    
+                    <Button Content="Complex Content">
+                        <Button.ToolTip>
+                            <ToolTip Style="{DynamicResource MaterialDesignRichToolTip}" Tag="Details">
+                                <StackPanel>
+                                    <TextBlock Text="You can put any content here." Margin="0,0,0,8" />
+                                    <TextBlock Text="• Bullet point 1" />
+                                    <TextBlock Text="• Bullet point 2" />
+                                </StackPanel>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                </StackPanel>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

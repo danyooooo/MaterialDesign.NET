@@ -1,0 +1,62 @@
+<UserControl x:Class="MaterialDesign.Demo.Pages.Divider"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MaterialDesign.Demo.Pages"
+             xmlns:md="clr-namespace:MaterialDesign.NET.Controls;assembly=MaterialDesign.NET"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="800">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="16" MaxWidth="800" HorizontalAlignment="Left">
+                <TextBlock Text="Divider" Style="{DynamicResource MdSysTypescale.DisplayMedium}" Margin="0,0,0,24" />
+                <TextBlock Text="A divider is a thin line that groups content in lists and layouts." 
+                           Style="{DynamicResource MdSysTypescale.BodyMedium}" Margin="0,0,0,32" />
+
+                <!-- Default Divider (Horizontal) -->
+                <TextBlock Text="Default Horizontal Divider" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                <Border CornerRadius="12" Background="{DynamicResource MdSysColor.SurfaceContainer}" Padding="16" Margin="0,0,0,24">
+                    <StackPanel>
+                        <TextBlock Text="Content Above" Style="{DynamicResource MdSysTypescale.BodyMedium}" Margin="0,0,0,8"/>
+                        <Separator Style="{DynamicResource MaterialDesignDivider}" Margin="0,8"/>
+                        <TextBlock Text="Content Below" Style="{DynamicResource MdSysTypescale.BodyMedium}" Margin="0,8,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Inset Divider -->
+                <TextBlock Text="Inset Divider" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                <Border CornerRadius="12" Background="{DynamicResource MdSysColor.SurfaceContainer}" Padding="0" ClipToBounds="True" Margin="0,0,0,24">
+                    <StackPanel>
+                        <Grid Height="56">
+                            <TextBlock Text="Item 1" VerticalAlignment="Center" Margin="16,0"/>
+                        </Grid>
+                        <Separator Style="{DynamicResource MaterialDesignDivider}" Margin="16,0,16,0"/>
+                        <Grid Height="56">
+                            <TextBlock Text="Item 2" VerticalAlignment="Center" Margin="16,0"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Vertical Divider (Need to implement or simulate) -->
+                <!-- WPF Separator is horizontal by default. To make it vertical, we need to style it or rotate it. 
+                     MD3 doesn't strictly specify vertical dividers in the same way, but they exist.
+                     Let's verify if standard Separator supports LayoutTransform or if we need a style trigger.
+                -->
+                <TextBlock Text="Vertical Divider (Simulated)" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                 <Border CornerRadius="12" Background="{DynamicResource MdSysColor.SurfaceContainer}" Padding="16" Margin="0,0,0,24">
+                    <StackPanel Orientation="Horizontal" Height="50">
+                        <TextBlock Text="Left" VerticalAlignment="Center" Margin="0,0,16,0"/>
+                        <Separator Style="{DynamicResource MaterialDesignDivider}" Width="1" Height="Auto" Margin="0" Background="{DynamicResource MdSysColor.OutlineVariant}">
+                            <Separator.LayoutTransform>
+                                <RotateTransform Angle="90" />
+                            </Separator.LayoutTransform>
+                        </Separator>
+                        <TextBlock Text="Right" VerticalAlignment="Center" Margin="16,0,0,0"/>
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

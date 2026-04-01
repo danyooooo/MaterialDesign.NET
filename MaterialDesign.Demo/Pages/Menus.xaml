@@ -1,0 +1,75 @@
+<UserControl x:Class="MaterialDesign.Demo.Pages.Menus"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:MaterialDesign.Demo.Pages"
+             xmlns:md="clr-namespace:MaterialDesign.NET.Controls;assembly=MaterialDesign.NET"
+             mc:Ignorable="d"
+             d:DesignHeight="800" d:DesignWidth="800">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="16" MaxWidth="800" HorizontalAlignment="Left">
+                <TextBlock Text="Menus" Style="{DynamicResource MdSysTypescale.DisplayMedium}" Margin="0,0,0,24" />
+                <TextBlock Text="Menus display a list of choices on a temporary surface." 
+                           Style="{DynamicResource MdSysTypescale.BodyMedium}" Margin="0,0,0,32" />
+
+                <!-- Context Menu -->
+                <TextBlock Text="Context Menu" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                <Border CornerRadius="12" Background="{DynamicResource MdSysColor.SurfaceContainer}" Padding="24" Margin="0,0,0,24">
+                    <StackPanel>
+                        <TextBlock Text="Right-click the text field below to see the context menu." Style="{DynamicResource MdSysTypescale.BodyMedium}" Margin="0,0,0,16"/>
+                        
+                        <TextBox Text="Right-click me" Width="300" HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignOutlinedTextField}">
+                            <TextBox.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Cut" Command="Cut"/>
+                                    <MenuItem Header="Copy" Command="Copy"/>
+                                    <MenuItem Header="Paste" Command="Paste"/>
+                                    <Separator Style="{DynamicResource MaterialDesignDivider}" />
+                                    <MenuItem Header="More Options">
+                                        <MenuItem Header="Option 1" />
+                                        <MenuItem Header="Option 2" />
+                                        <MenuItem Header="Submenu">
+                                            <MenuItem Header="Deep Item 1" />
+                                            <MenuItem Header="Deep Item 2" />
+                                        </MenuItem>
+                                    </MenuItem>
+                                </ContextMenu>
+                            </TextBox.ContextMenu>
+                        </TextBox>
+                    </StackPanel>
+                </Border>
+
+                <!-- Menu Bar -->
+                <TextBlock Text="Menu Bar" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                <Border CornerRadius="12" Background="{DynamicResource MdSysColor.SurfaceContainer}" Padding="24" Margin="0,0,0,24">
+                    <Menu HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignMenu}">
+                        <MenuItem Header="_File">
+                            <MenuItem Header="_New" Command="New" />
+                            <MenuItem Header="_Open" Command="Open" />
+                             <Separator Style="{DynamicResource MaterialDesignDivider}" />
+                            <MenuItem Header="_Save" Command="Save" />
+                            <MenuItem Header="_Exit" InputGestureText="Alt+F4" />
+                        </MenuItem>
+                        <MenuItem Header="_Edit">
+                            <MenuItem Header="Undo" Command="Undo" />
+                            <MenuItem Header="Redo" Command="Redo" />
+                        </MenuItem>
+                        <MenuItem Header="_View">
+                            <MenuItem Header="Full Screen" IsCheckable="True" />
+                            <MenuItem Header="Status Bar" IsCheckable="True" IsChecked="True" />
+                        </MenuItem>
+                    </Menu>
+                </Border>
+                
+                <!-- Icon Items -->
+                <TextBlock Text="Menu with Icons" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                <Border CornerRadius="12" Background="{DynamicResource MdSysColor.SurfaceContainer}" Padding="24" Margin="0,0,0,24">
+                    <!-- Icon Item examples are within context menu above -->
+                    <TextBlock Text="Icon examples are shown in the Context Menu above." Style="{DynamicResource MdSysTypescale.BodyMedium}" />
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

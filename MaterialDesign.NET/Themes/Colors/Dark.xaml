@@ -1,0 +1,63 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Palette.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- Primary -->
+    <Color x:Key="MdSysColor.Primary.Color">#d0bcff</Color> <!-- MdRefPalette.Primary80 -->
+    <SolidColorBrush x:Key="MdSysColor.Primary" Color="{DynamicResource MdSysColor.Primary.Color}" />
+    <Color x:Key="MdSysColor.OnPrimary.Color">#381e72</Color> <!-- MdRefPalette.Primary20 -->
+    <SolidColorBrush x:Key="MdSysColor.OnPrimary" Color="{DynamicResource MdSysColor.OnPrimary.Color}" />
+    <SolidColorBrush x:Key="MdSysColor.PrimaryContainer" Color="{DynamicResource MdRefPalette.Primary30}" />
+    <SolidColorBrush x:Key="MdSysColor.OnPrimaryContainer" Color="{DynamicResource MdRefPalette.Primary90}" />
+    <SolidColorBrush x:Key="MdSysColor.InversePrimary" Color="{DynamicResource MdRefPalette.Primary40}" />
+    
+    <!-- Secondary -->
+    <SolidColorBrush x:Key="MdSysColor.Secondary" Color="{DynamicResource MdRefPalette.Secondary80}" />
+    <SolidColorBrush x:Key="MdSysColor.OnSecondary" Color="{DynamicResource MdRefPalette.Secondary20}" />
+    <SolidColorBrush x:Key="MdSysColor.SecondaryContainer" Color="{DynamicResource MdRefPalette.Secondary30}" />
+    <SolidColorBrush x:Key="MdSysColor.OnSecondaryContainer" Color="{DynamicResource MdRefPalette.Secondary90}" />
+
+    <!-- Tertiary -->
+    <SolidColorBrush x:Key="MdSysColor.Tertiary" Color="{DynamicResource MdRefPalette.Tertiary80}" />
+    <SolidColorBrush x:Key="MdSysColor.OnTertiary" Color="{DynamicResource MdRefPalette.Tertiary20}" />
+    <SolidColorBrush x:Key="MdSysColor.TertiaryContainer" Color="{DynamicResource MdRefPalette.Tertiary30}" />
+    <SolidColorBrush x:Key="MdSysColor.OnTertiaryContainer" Color="{DynamicResource MdRefPalette.Tertiary90}" />
+
+    <!-- Error -->
+    <SolidColorBrush x:Key="MdSysColor.Error" Color="{DynamicResource MdRefPalette.Error80}" />
+    <SolidColorBrush x:Key="MdSysColor.OnError" Color="{DynamicResource MdRefPalette.Error20}" />
+    <SolidColorBrush x:Key="MdSysColor.ErrorContainer" Color="{DynamicResource MdRefPalette.Error30}" />
+    <SolidColorBrush x:Key="MdSysColor.OnErrorContainer" Color="{DynamicResource MdRefPalette.Error90}" />
+
+    <!-- Surface -->
+    <SolidColorBrush x:Key="MdSysColor.Surface" Color="{DynamicResource MdRefPalette.Neutral6}" />
+    <SolidColorBrush x:Key="MdSysColor.OnSurface" Color="{DynamicResource MdRefPalette.Neutral90}" />
+    <SolidColorBrush x:Key="MdSysColor.SurfaceVariant" Color="{DynamicResource MdRefPalette.NeutralVariant30}" />
+    <Color x:Key="MdSysColor.OnSurfaceVariant.Color">#cac4d0</Color> <!-- MdRefPalette.NeutralVariant80 -->
+    <SolidColorBrush x:Key="MdSysColor.OnSurfaceVariant" Color="{DynamicResource MdSysColor.OnSurfaceVariant.Color}" />
+    <SolidColorBrush x:Key="MdSysColor.InverseSurface" Color="{DynamicResource MdRefPalette.Neutral90}" />
+    <SolidColorBrush x:Key="MdSysColor.InverseOnSurface" Color="{DynamicResource MdRefPalette.Neutral20}" />
+
+    <!-- Surface Containers -->    
+    <SolidColorBrush x:Key="MdSysColor.SurfaceContainerLowest" Color="{DynamicResource MdRefPalette.Neutral4}" />
+    <SolidColorBrush x:Key="MdSysColor.SurfaceContainerLow" Color="{DynamicResource MdRefPalette.Neutral10}" />
+    <SolidColorBrush x:Key="MdSysColor.SurfaceContainer" Color="{DynamicResource MdRefPalette.Neutral12}" />
+    <SolidColorBrush x:Key="MdSysColor.SurfaceContainerHigh" Color="{DynamicResource MdRefPalette.Neutral17}" />
+    <Color x:Key="MdSysColor.SurfaceContainerHighest.Color">#36343b</Color> <!-- MdRefPalette.Neutral22 -->
+    <SolidColorBrush x:Key="MdSysColor.SurfaceContainerHighest" Color="{DynamicResource MdSysColor.SurfaceContainerHighest.Color}" />
+    <SolidColorBrush x:Key="MdSysColor.SurfaceDim" Color="{DynamicResource MdRefPalette.Neutral6}" />
+    <SolidColorBrush x:Key="MdSysColor.SurfaceBright" Color="{DynamicResource MdRefPalette.Neutral24}" />
+
+    <!-- Outline -->
+    <Color x:Key="MdSysColor.Outline.Color">#938f99</Color> <!-- MdRefPalette.NeutralVariant60 -->
+    <SolidColorBrush x:Key="MdSysColor.Outline" Color="{DynamicResource MdSysColor.Outline.Color}" />
+    <SolidColorBrush x:Key="MdSysColor.OutlineVariant" Color="{DynamicResource MdRefPalette.NeutralVariant30}" />
+    
+    <!-- Scrim/Shadow -->
+    <SolidColorBrush x:Key="MdSysColor.Scrim" Color="{DynamicResource MdRefPalette.Neutral0}" />
+    <SolidColorBrush x:Key="MdSysColor.Shadow" Color="{DynamicResource MdRefPalette.Neutral0}" />
+
+</ResourceDictionary>

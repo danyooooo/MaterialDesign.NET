@@ -1,0 +1,17 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <CornerRadius x:Key="MdSysShape.CornerNone">0</CornerRadius>
+    <CornerRadius x:Key="MdSysShape.CornerExtraSmall">4</CornerRadius>
+    <CornerRadius x:Key="MdSysShape.CornerExtraSmallTop">4,4,0,0</CornerRadius>
+    <CornerRadius x:Key="MdSysShape.CornerSmall">8</CornerRadius>
+    <CornerRadius x:Key="MdSysShape.CornerMedium">12</CornerRadius>
+    <CornerRadius x:Key="MdSysShape.CornerLarge">16</CornerRadius>
+    <CornerRadius x:Key="MdSysShape.CornerLargeEnd">0,16,16,0</CornerRadius>
+    <CornerRadius x:Key="MdSysShape.CornerLargeStart">16,0,0,16</CornerRadius>
+    <CornerRadius x:Key="MdSysShape.CornerLargeTop">16,16,0,0</CornerRadius>
+    <CornerRadius x:Key="MdSysShape.CornerExtraLarge">28</CornerRadius>
+    <CornerRadius x:Key="MdSysShape.CornerExtraLargeTop">28,28,0,0</CornerRadius>
+    <CornerRadius x:Key="MdSysShape.CornerFull">1000</CornerRadius> <!-- Effectively circular/stadium -->
+
+</ResourceDictionary>

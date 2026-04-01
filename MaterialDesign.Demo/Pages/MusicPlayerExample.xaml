@@ -1,0 +1,319 @@
+<UserControl x:Class="MaterialDesign.Demo.Pages.MusicPlayerExample"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:helpers="clr-namespace:MaterialDesign.NET.Helpers;assembly=MaterialDesign.NET"
+             xmlns:local="clr-namespace:MaterialDesign.Demo.Pages"
+             mc:Ignorable="d"
+             d:DesignHeight="800" d:DesignWidth="1200">
+    <UserControl.Resources>
+        <!-- Example of using the MaterialSymbolsFont markup extension -->
+        <FontFamily x:Key="OutlinedFont">{helpers:MaterialSymbolsFont Outlined}</FontFamily>
+        <FontFamily x:Key="RoundedFont">{helpers:MaterialSymbolsFont Rounded}</FontFamily>
+        <FontFamily x:Key="SharpFont">{helpers:MaterialSymbolsFont Sharp}</FontFamily>
+    </UserControl.Resources>
+    <Grid Background="{DynamicResource MdSysColor.Surface}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="320"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Left Sidebar - Navigation -->
+        <Border Grid.Column="0" Grid.Row="0" Background="{DynamicResource MdSysColor.SurfaceContainer}" BorderBrush="{DynamicResource MdSysColor.OutlineVariant}" BorderThickness="0,0,1,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- App Logo -->
+                <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="24,20,24,24"><TextBlock Text="Melody" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- Navigation -->
+                <StackPanel Grid.Row="1" Margin="12,0">
+                    <TextBlock Text="Menu" Style="{DynamicResource MdSysTypescale.LabelLarge}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" Margin="16,0,16,8"/>
+                    
+                    <Button Style="{DynamicResource MaterialDesignTextButtonStyle}" HorizontalContentAlignment="Left" Padding="16,12">
+                        <StackPanel Orientation="Horizontal"><TextBlock Text="Home" Style="{DynamicResource MdSysTypescale.BodyLarge}"/>
+                        </StackPanel>
+                    </Button>
+                    
+                    <Button Style="{DynamicResource MaterialDesignTextButtonStyle}" HorizontalContentAlignment="Left" Padding="16,12" Background="{DynamicResource MdSysColor.SecondaryContainer}">
+                        <StackPanel Orientation="Horizontal"><TextBlock Text="Search" Style="{DynamicResource MdSysTypescale.BodyLarge}" Foreground="{DynamicResource MdSysColor.OnSecondaryContainer}"/>
+                        </StackPanel>
+                    </Button>
+                    
+                    <Button Style="{DynamicResource MaterialDesignTextButtonStyle}" HorizontalContentAlignment="Left" Padding="16,12">
+                        <StackPanel Orientation="Horizontal"><TextBlock Text="Your Library" Style="{DynamicResource MdSysTypescale.BodyLarge}"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Border Margin="0,16,0,0" Padding="16,0" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}" CornerRadius="8">
+                        <StackPanel>
+                            <TextBlock Text="Playlists" Style="{DynamicResource MdSysTypescale.LabelLarge}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" Margin="0,12,0,8"/>
+                            <Button Style="{DynamicResource MaterialDesignTextButtonStyle}" HorizontalContentAlignment="Left" Padding="8,8" FontSize="14">
+                                <StackPanel Orientation="Horizontal"><TextBlock Text="Liked Songs"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Style="{DynamicResource MaterialDesignTextButtonStyle}" HorizontalContentAlignment="Left" Padding="8,8" FontSize="14">
+                                <StackPanel Orientation="Horizontal"><TextBlock Text="Chill Vibes"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Style="{DynamicResource MaterialDesignTextButtonStyle}" HorizontalContentAlignment="Left" Padding="8,8" FontSize="14">
+                                <StackPanel Orientation="Horizontal"><TextBlock Text="Workout Mix"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <!-- User Profile -->
+                <Border Grid.Row="2" Padding="16" BorderBrush="{DynamicResource MdSysColor.OutlineVariant}" BorderThickness="0,1,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="40" Height="40" CornerRadius="20" Background="{DynamicResource MdSysColor.PrimaryContainer}">
+                            <TextBlock Text="JD" Style="{DynamicResource MdSysTypescale.TitleMedium}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource MdSysColor.OnPrimaryContainer}"/>
+                        </Border>
+                        <StackPanel Margin="12,0,0,0" VerticalAlignment="Center">
+                            <TextBlock Text="John Doe" Style="{DynamicResource MdSysTypescale.BodyLarge}"/>
+                            <TextBlock Text="Premium" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- Main Content -->
+        <ScrollViewer Grid.Column="1" Grid.Row="0" VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="32,24">
+                <!-- Hero Section -->
+                <Border Background="{DynamicResource MdSysColor.PrimaryContainer}" CornerRadius="{DynamicResource MdSysShape.CornerLarge}" Padding="32" Margin="0,0,0,32">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" Width="200" Height="200" CornerRadius="8" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}"></Border>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="24,0,0,0">
+                            <TextBlock Text="Playlist" Style="{DynamicResource MdSysTypescale.LabelLarge}" Foreground="{DynamicResource MdSysColor.OnPrimaryContainer}"/>
+                            <TextBlock Text="Today's Top Hits" Style="{DynamicResource MdSysTypescale.DisplaySmall}" Foreground="{DynamicResource MdSysColor.OnPrimaryContainer}" Margin="0,8,0,16"/>
+                            <TextBlock Text="The hottest tracks right now. Cover: Taylor Swift" Style="{DynamicResource MdSysTypescale.BodyLarge}" Foreground="{DynamicResource MdSysColor.OnPrimaryContainer}" Opacity="0.8" TextWrapping="Wrap"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,24,0,0">
+                                <Button Style="{DynamicResource MaterialDesignFilledButtonStyle}" Content="Play" Width="120" Margin="0,0,12,0">
+                                    <Button.ContentTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal"><TextBlock Text="{Binding}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </Button.ContentTemplate>
+                                </Button>
+                                <Button Style="{DynamicResource MaterialDesignOutlinedIconButtonStyle}" ToolTip="Like"></Button>
+                                <Button Style="{DynamicResource MaterialDesignOutlinedIconButtonStyle}" ToolTip="More"></Button>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <!-- Chips Filter -->
+                <StackPanel Margin="0,0,0,24">
+                    <TextBlock Text="Browse by Genre" Style="{DynamicResource MdSysTypescale.TitleLarge}" Margin="0,0,0,16"/>
+                    <WrapPanel>
+                        <ToggleButton Content="All" Style="{DynamicResource MaterialDesignFilterChipStyle}" IsChecked="True" Margin="0,0,8,8"/>
+                        <ToggleButton Content="Pop" Style="{DynamicResource MaterialDesignFilterChipStyle}" Margin="0,0,8,8"/>
+                        <ToggleButton Content="Rock" Style="{DynamicResource MaterialDesignFilterChipStyle}" Margin="0,0,8,8"/>
+                        <ToggleButton Content="Hip-Hop" Style="{DynamicResource MaterialDesignFilterChipStyle}" Margin="0,0,8,8"/>
+                        <ToggleButton Content="Electronic" Style="{DynamicResource MaterialDesignFilterChipStyle}" Margin="0,0,8,8"/>
+                        <ToggleButton Content="R&amp;B" Style="{DynamicResource MaterialDesignFilterChipStyle}" Margin="0,0,8,8"/>
+                        <ToggleButton Content="Jazz" Style="{DynamicResource MaterialDesignFilterChipStyle}" Margin="0,0,8,8"/>
+                    </WrapPanel>
+                </StackPanel>
+
+                <!-- Songs List -->
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,16">
+                        <TextBlock Text="Popular Songs" Style="{DynamicResource MdSysTypescale.TitleLarge}"/>
+                        <Button Style="{DynamicResource MaterialDesignTextButtonStyle}" Content="See All" Margin="12,0,0,0"/>
+                    </StackPanel>
+
+                    <!-- Song Items -->
+                    <ListBox Style="{DynamicResource MaterialDesignListBoxStyle}" BorderThickness="0" ScrollViewer.CanContentScroll="False">
+                        <!-- Song 1 -->
+                        <ListBoxItem Style="{DynamicResource MaterialDesignListBoxItemStyle}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Border Grid.Column="0" Width="56" Height="56" CornerRadius="4" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}"></Border>
+                                <StackPanel Grid.Column="1" Margin="16,0" VerticalAlignment="Center">
+                                    <TextBlock Text="Anti-Hero" Style="{DynamicResource MdSysTypescale.BodyLarge}"/>
+                                    <TextBlock Text="Taylor Swift" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}"/>
+                                </StackPanel>
+                                <TextBlock Grid.Column="2" Text="3:21" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" VerticalAlignment="Center" Margin="0,0,16,0"/>
+                                <StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Button Style="{DynamicResource MaterialDesignIconButtonStyle}" FontSize="40"></Button>
+                                    <Button Style="{DynamicResource MaterialDesignIconButtonStyle}" FontSize="40"></Button>
+                                </StackPanel>
+                            </Grid>
+                        </ListBoxItem>
+
+                        <!-- Song 2 -->
+                        <ListBoxItem Style="{DynamicResource MaterialDesignListBoxItemStyle}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Border Grid.Column="0" Width="56" Height="56" CornerRadius="4" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}"></Border>
+                                <StackPanel Grid.Column="1" Margin="16,0" VerticalAlignment="Center">
+                                    <TextBlock Text="Flowers" Style="{DynamicResource MdSysTypescale.BodyLarge}"/>
+                                    <TextBlock Text="Miley Cyrus" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}"/>
+                                </StackPanel>
+                                <TextBlock Grid.Column="2" Text="3:42" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" VerticalAlignment="Center" Margin="0,0,16,0"/>
+                                <StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Button Style="{DynamicResource MaterialDesignIconButtonStyle}" FontSize="40"></Button>
+                                    <Button Style="{DynamicResource MaterialDesignIconButtonStyle}" FontSize="40"></Button>
+                                </StackPanel>
+                            </Grid>
+                        </ListBoxItem>
+
+                        <!-- Song 3 -->
+                        <ListBoxItem Style="{DynamicResource MaterialDesignListBoxItemStyle}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Border Grid.Column="0" Width="56" Height="56" CornerRadius="4" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}"></Border>
+                                <StackPanel Grid.Column="1" Margin="16,0" VerticalAlignment="Center">
+                                    <TextBlock Text="As It Was" Style="{DynamicResource MdSysTypescale.BodyLarge}"/>
+                                    <TextBlock Text="Harry Styles" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}"/>
+                                </StackPanel>
+                                <TextBlock Grid.Column="2" Text="2:58" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" VerticalAlignment="Center" Margin="0,0,16,0"/>
+                                <StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Button Style="{DynamicResource MaterialDesignIconButtonStyle}" FontSize="40"></Button>
+                                    <Button Style="{DynamicResource MaterialDesignIconButtonStyle}" FontSize="40"></Button>
+                                </StackPanel>
+                            </Grid>
+                        </ListBoxItem>
+                    </ListBox>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Right Sidebar - Now Playing -->
+        <Border Grid.Column="2" Grid.Row="0" Background="{DynamicResource MdSysColor.SurfaceContainer}" BorderBrush="{DynamicResource MdSysColor.OutlineVariant}" BorderThickness="1,0,0,0">
+            <StackPanel Margin="20">
+                <TextBlock Text="Now Playing" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,24"/>
+                
+                <!-- Album Art -->
+                <Border Width="240" Height="240" CornerRadius="8" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}" HorizontalAlignment="Center" Margin="0,0,0,24"></Border>
+
+                <!-- Song Info -->
+                <StackPanel Margin="0,0,0,24">
+                    <TextBlock Text="Anti-Hero" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" TextAlignment="Center"/>
+                    <TextBlock Text="Taylor Swift" Style="{DynamicResource MdSysTypescale.BodyLarge}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" TextAlignment="Center"/>
+                    <TextBlock Text="Midnights" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" TextAlignment="Center"/>
+                </StackPanel>
+
+                <!-- Progress Slider -->
+                <StackPanel Margin="0,0,0,24">
+                    <Slider Style="{DynamicResource MaterialDesignSliderStyle}" Minimum="0" Maximum="100" Value="35" Margin="0,0,0,8"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="1:12" Style="{DynamicResource MdSysTypescale.LabelSmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}"/>
+                        <TextBlock Grid.Column="1" Text="3:21" Style="{DynamicResource MdSysTypescale.LabelSmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" HorizontalAlignment="Right"/>
+                    </Grid>
+                </StackPanel>
+
+                <!-- Playback Controls -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,24">
+                    <Button Style="{DynamicResource MaterialDesignIconButtonStyle}"></Button>
+                    <Button Style="{DynamicResource MaterialDesignIconButtonStyle}"></Button>
+                    <Button Style="{DynamicResource MaterialDesignFilledButtonStyle}" FontSize="64" Margin="12,0"></Button>
+                    <Button Style="{DynamicResource MaterialDesignIconButtonStyle}"></Button>
+                    <Button Style="{DynamicResource MaterialDesignIconButtonStyle}"></Button>
+                </StackPanel>
+
+                <!-- Volume -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,24"><Slider Style="{DynamicResource MaterialDesignSliderStyle}" Minimum="0" Maximum="100" Value="70" Width="150" Margin="12,0"/></StackPanel>
+
+                <!-- Queue -->
+                <StackPanel>
+                    <TextBlock Text="Up Next" Style="{DynamicResource MdSysTypescale.LabelLarge}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" Margin="0,0,0,12"/>
+                    
+                    <Border Padding="12" CornerRadius="8" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}" Margin="0,0,0,8">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="40" Height="40" CornerRadius="4" Background="{DynamicResource MdSysColor.SurfaceContainer}"></Border>
+                            <StackPanel Margin="12,0,0,0">
+                                <TextBlock Text="Flowers" Style="{DynamicResource MdSysTypescale.BodySmall}"/>
+                                <TextBlock Text="Miley Cyrus" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Padding="12" CornerRadius="8" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="40" Height="40" CornerRadius="4" Background="{DynamicResource MdSysColor.SurfaceContainer}"></Border>
+                            <StackPanel Margin="12,0,0,0">
+                                <TextBlock Text="As It Was" Style="{DynamicResource MdSysTypescale.BodySmall}"/>
+                                <TextBlock Text="Harry Styles" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- Player Bar -->
+        <Border Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Background="{DynamicResource MdSysColor.SurfaceContainer}" BorderBrush="{DynamicResource MdSysColor.OutlineVariant}" BorderThickness="0,1,0,0" Padding="16,12">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Now Playing Info -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <Border Width="48" Height="48" CornerRadius="4" Background="{DynamicResource MdSysColor.SurfaceContainerHighest}"></Border>
+                    <StackPanel Margin="12,0,0,0" VerticalAlignment="Center">
+                        <TextBlock Text="Anti-Hero" Style="{DynamicResource MdSysTypescale.BodyMedium}"/>
+                        <TextBlock Text="Taylor Swift" Style="{DynamicResource MdSysTypescale.BodySmall}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}"/>
+                    </StackPanel>
+                    <Button Style="{DynamicResource MaterialDesignIconButtonStyle}" Margin="12,0,0,0"></Button>
+                </StackPanel>
+
+                <!-- Playback Controls -->
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <Button Style="{DynamicResource MaterialDesignIconButtonStyle}"></Button>
+                    <Button Style="{DynamicResource MaterialDesignIconButtonStyle}"></Button>
+                    <Button Style="{DynamicResource MaterialDesignFilledButtonStyle}" FontSize="48" Margin="8,0"></Button>
+                    <Button Style="{DynamicResource MaterialDesignIconButtonStyle}"></Button>
+                    <Button Style="{DynamicResource MaterialDesignIconButtonStyle}"></Button>
+                </StackPanel>
+
+                <!-- Volume & Extra -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Style="{DynamicResource MaterialDesignIconButtonStyle}"></Button><Slider Style="{DynamicResource MaterialDesignSliderStyle}" Minimum="0" Maximum="100" Value="70" Width="100"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

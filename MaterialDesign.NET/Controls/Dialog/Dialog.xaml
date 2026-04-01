@@ -1,0 +1,71 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    mc:Ignorable="d"
+                    xmlns:controls="clr-namespace:MaterialDesign.NET.Controls">
+
+    <!-- Dialog Card Style -->
+    <Style x:Key="MaterialDesignDialogCardStyle" TargetType="{x:Type ContentControl}">
+        <Setter Property="Background" Value="{DynamicResource MdSysColor.SurfaceContainerHigh}" />
+        <Setter Property="Foreground" Value="{DynamicResource MdSysColor.OnSurface}" />
+        <Setter Property="Padding" Value="24" />
+        <Setter Property="MinWidth" Value="280" />
+        <Setter Property="MaxWidth" Value="560" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ContentControl}">
+                    <Grid>
+                        <!-- Elevation 3 Shadow -->
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="{DynamicResource MdSysShape.CornerExtraLarge}"
+                                Effect="{DynamicResource MaterialDesignShadow3}" 
+                                Margin="3" /> <!-- Margin for shadow -->
+                        <!-- Clip Content -->
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="{DynamicResource MdSysShape.CornerExtraLarge}"
+                                ClipToBounds="True">
+                             <ContentPresenter Margin="{TemplateBinding Padding}" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Dialog Host Style -->
+    <Style TargetType="{x:Type controls:DialogHost}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:DialogHost}">
+                    <Grid>
+                        <!-- Underlying Main Content -->
+                        <ContentPresenter Content="{TemplateBinding Content}" />
+
+                        <!-- Dialog Container (Controls visibility of both Scrim and Dialog) -->
+                        <Grid x:Name="DialogContainer"
+                              Visibility="Collapsed"
+                              d:Visibility="Visible">
+                            
+                             <!-- Scrim (Click target for CloseOnClickAway) -->
+                             <Border x:Name="PART_Scrim" Background="#52000000" />
+
+                             <!-- Dialog Content (Centered, Sibling to Scrim so clicks don't bubble to Scrim) -->
+                             <ContentControl Style="{DynamicResource MaterialDesignDialogCardStyle}"
+                                             Content="{TemplateBinding DialogContent}"
+                                             ContentTemplate="{TemplateBinding DialogContentTemplate}" />
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsOpen" Value="True">
+                            <Setter TargetName="DialogContainer" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

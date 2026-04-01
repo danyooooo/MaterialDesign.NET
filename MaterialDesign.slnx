@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="MaterialDesign.Demo/MaterialDesign.Demo.csproj" />
+  <Project Path="MaterialDesign.NET/MaterialDesign.NET.csproj" />
+</Solution>

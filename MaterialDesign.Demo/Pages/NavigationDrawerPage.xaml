@@ -1,0 +1,57 @@
+<UserControl x:Class="MaterialDesign.Demo.Pages.NavigationDrawerPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Navigation Drawer -->
+        <ListBox Grid.Column="0" Style="{DynamicResource MaterialDesignNavigationDrawerStyle}">
+            <ListBoxItem IsSelected="True">
+                <StackPanel Orientation="Horizontal"><TextBlock Text="Inbox" 
+                               Style="{DynamicResource MdSysTypescale.LabelLarge}" 
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal"><TextBlock Text="Outbox" 
+                               Style="{DynamicResource MdSysTypescale.LabelLarge}" 
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal"><TextBlock Text="Drafts" 
+                               Style="{DynamicResource MdSysTypescale.LabelLarge}" 
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal"><TextBlock Text="Trash" 
+                               Style="{DynamicResource MdSysTypescale.LabelLarge}" 
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+            </ListBoxItem>
+        </ListBox>
+
+        <!-- Page Content -->
+        <StackPanel Grid.Column="1" Margin="32">
+            <TextBlock Text="Navigation Drawer" Style="{DynamicResource MdSysTypescale.DisplayMedium}" Margin="0,0,0,8" />
+            <TextBlock Text="Navigation drawers provide access to destinations and app functionality, such as switching accounts." 
+                       Style="{DynamicResource MdSysTypescale.BodyLarge}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" Margin="0,0,0,32" />
+            
+            <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="12" Padding="24">
+                <StackPanel>
+                    <TextBlock Text="Standard Drawer" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Margin="0,0,0,16" />
+                    <TextBlock Text="A standard drawer is anchored to one side of the layout and is always visible alongside the main content." 
+                               Style="{DynamicResource MdSysTypescale.BodyMedium}" Margin="0,0,0,16"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>

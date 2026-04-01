@@ -1,0 +1,153 @@
+<UserControl x:Class="MaterialDesign.Demo.Pages.TextFields"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:helpers="clr-namespace:MaterialDesign.NET.Helpers;assembly=MaterialDesign.NET"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="800">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="24">
+             <TextBlock Text="TextFields" Style="{DynamicResource MdSysTypescale.DisplaySmall}" Margin="0,0,0,8" />
+            <TextBlock Text="TextFields let users enter and edit text." Style="{DynamicResource MdSysTypescale.BodyLarge}" Margin="0,0,0,32" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" TextWrapping="Wrap" />
+
+            <!-- Filled TextField -->
+            <StackPanel Margin="0,0,0,32">
+                <TextBlock Text="Filled TextField" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Margin="0,0,0,16" />
+                <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="12" Padding="24">
+                    <StackPanel>
+                        <WrapPanel Margin="0,0,0,16">
+                            <StackPanel Margin="0,0,24,24">
+                                <TextBlock Text="Enabled" Style="{DynamicResource MdSysTypescale.TitleSmall}" Margin="0,0,0,8"/>
+                                <TextBox Style="{DynamicResource MaterialDesignFilledTextBoxStyle}" 
+                                         helpers:TextFieldAssist.Label="Label"
+                                         Width="240" />
+                            </StackPanel>
+
+                             <StackPanel Margin="0,0,24,24">
+                                <TextBlock Text="Populated" Style="{DynamicResource MdSysTypescale.TitleSmall}" Margin="0,0,0,8"/>
+                                <TextBox Style="{DynamicResource MaterialDesignFilledTextBoxStyle}" 
+                                         helpers:TextFieldAssist.Label="Label"
+                                         Text="Input text"
+                                         Width="240" />
+                            </StackPanel>
+
+                             <StackPanel Margin="0,0,24,24">
+                                <TextBlock Text="Disabled" Style="{DynamicResource MdSysTypescale.TitleSmall}" Margin="0,0,0,8"/>
+                                <TextBox Style="{DynamicResource MaterialDesignFilledTextBoxStyle}" 
+                                         helpers:TextFieldAssist.Label="Label"
+                                         IsEnabled="False"
+                                         Width="240" />
+                            </StackPanel>
+                        </WrapPanel>
+                        
+                        <Expander Header="Source Code">
+                            <TextBox Style="{DynamicResource MaterialDesignOutlinedTextBoxStyle}"
+                                     helpers:TextFieldAssist.Label="XAML"
+                                     IsReadOnly="True"
+                                     AcceptsReturn="True"
+                                     Height="80"
+                                     VerticalScrollBarVisibility="Auto"
+                                     FontFamily="Consolas"
+                                     FontSize="12"
+                                     Text="&lt;TextBox Style=&quot;{DynamicResource MaterialDesignFilledTextBoxStyle}&quot;&#x0a;         helpers:TextFieldAssist.Label=&quot;Username&quot; /&gt;" />
+                        </Expander>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Outlined TextField -->
+            <StackPanel Margin="0,0,0,32">
+                <TextBlock Text="Outlined TextField" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Margin="0,0,0,16" />
+                <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="12" Padding="24">
+                    <StackPanel>
+                        <WrapPanel Margin="0,0,0,16">
+                            <StackPanel Margin="0,0,24,24">
+                                <TextBlock Text="Enabled" Style="{DynamicResource MdSysTypescale.TitleSmall}" Margin="0,0,0,8"/>
+                                <TextBox Style="{DynamicResource MaterialDesignOutlinedTextBoxStyle}" 
+                                         helpers:TextFieldAssist.Label="Label"
+                                         Width="240" />
+                            </StackPanel>
+
+                            <StackPanel Margin="0,0,24,24">
+                                <TextBlock Text="Populated" Style="{DynamicResource MdSysTypescale.TitleSmall}" Margin="0,0,0,8"/>
+                                <TextBox Style="{DynamicResource MaterialDesignOutlinedTextBoxStyle}" 
+                                         helpers:TextFieldAssist.Label="Label"
+                                         Text="Input text"
+                                         Width="240" />
+                            </StackPanel>
+
+                            <StackPanel Margin="0,0,24,24">
+                                <TextBlock Text="Disabled" Style="{DynamicResource MdSysTypescale.TitleSmall}" Margin="0,0,0,8"/>
+                                <TextBox Style="{DynamicResource MaterialDesignOutlinedTextBoxStyle}" 
+                                         helpers:TextFieldAssist.Label="Label"
+                                         IsEnabled="False"
+                                         Width="240" />
+                            </StackPanel>
+                        </WrapPanel>
+
+                        <Expander Header="Source Code">
+                            <TextBox Style="{DynamicResource MaterialDesignOutlinedTextBoxStyle}"
+                                     helpers:TextFieldAssist.Label="XAML"
+                                     IsReadOnly="True"
+                                     AcceptsReturn="True"
+                                     Height="80"
+                                     VerticalScrollBarVisibility="Auto"
+                                     FontFamily="Consolas"
+                                     FontSize="12"
+                                     Text="&lt;TextBox Style=&quot;{DynamicResource MaterialDesignOutlinedTextBoxStyle}&quot;&#x0a;         helpers:TextFieldAssist.Label=&quot;Email&quot; /&gt;" />
+                        </Expander>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- TextFields with Icons -->
+            <StackPanel Margin="0,0,0,32">
+                <TextBlock Text="TextFields with Icons" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Margin="0,0,0,16" />
+                <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="12" Padding="24">
+                    <WrapPanel>
+                        <StackPanel Margin="0,0,24,24">
+                            <TextBlock Text="Leading Icon" Style="{DynamicResource MdSysTypescale.TitleSmall}" Margin="0,0,0,8"/>
+                            <TextBox Style="{DynamicResource MaterialDesignFilledTextBoxStyle}"
+                                     helpers:TextFieldAssist.Label="Search"
+                                     Width="240"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="0,0,24,24">
+                            <TextBlock Text="Trailing Icon" Style="{DynamicResource MdSysTypescale.TitleSmall}" Margin="0,0,0,8"/>
+                            <TextBox Style="{DynamicResource MaterialDesignOutlinedTextBoxStyle}"
+                                     helpers:TextFieldAssist.Label="Clearable"
+                                     Text="Some value"
+                                     Width="240"/>
+                        </StackPanel>
+                    </WrapPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- TextFields with Supporting Text -->
+            <StackPanel Margin="0,0,0,32">
+                <TextBlock Text="Supporting Text" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Margin="0,0,0,16" />
+                <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="12" Padding="24">
+                    <WrapPanel>
+                        <StackPanel Margin="0,0,24,24">
+                            <TextBlock Text="Filled" Style="{DynamicResource MdSysTypescale.TitleSmall}" Margin="0,0,0,8"/>
+                            <TextBox Style="{DynamicResource MaterialDesignFilledTextBoxStyle}" 
+                                     helpers:TextFieldAssist.Label="Password"
+                                     helpers:TextFieldAssist.SupportingText="At least 8 characters"
+                                     Width="240" />
+                        </StackPanel>
+
+                        <StackPanel Margin="0,0,24,24">
+                            <TextBlock Text="Outlined" Style="{DynamicResource MdSysTypescale.TitleSmall}" Margin="0,0,0,8"/>
+                            <TextBox Style="{DynamicResource MaterialDesignOutlinedTextBoxStyle}" 
+                                     helpers:TextFieldAssist.Label="Username"
+                                     helpers:TextFieldAssist.SupportingText="Unique handle"
+                                     Width="240" />
+                        </StackPanel>
+                    </WrapPanel>
+                </Border>
+            </StackPanel>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

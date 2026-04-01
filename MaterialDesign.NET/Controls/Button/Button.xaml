@@ -1,0 +1,122 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MaterialDesign.NET.Controls"
+                    xmlns:helpers="clr-namespace:MaterialDesign.NET.Helpers">
+
+    <Style x:Key="MaterialDesignBaseButtonStyle" TargetType="Button">
+        <Setter Property="FontFamily" Value="{DynamicResource MdRefTypeface.Brand}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="{DynamicResource MdRefTypeface.WeightMedium}" />
+        <Setter Property="Padding" Value="24,0" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource MdSysColor.Primary}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="helpers:ShadowAssist.Elevation" Value="Level0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border x:Name="Border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="{DynamicResource MdSysShape.CornerExtraSmall}">
+                            <!-- Wait, if Button gets shadow, it includes the transparent parts? No, DropShadowEffect on a transparent background element might not work as expected or might shadow the text. 
+                                 Correct way: ShadowAssist sets Effect on the Button. The Button has a Template. 
+                                 If the Button has a Background, the shadow applies to the Background shape. 
+                                 If Background is null/Transparent, shadow applies to content (text).
+                                 For Filled Button, Background is set.
+                                 However, we want the *Border* to have the shadow maybe?
+                                 MD3 buttons: shadow is on the container.
+                                 If ShadowAssist sets Effect on Button, and Button has a Template with a Border, the whole visual tree of the Button gets the shadow.
+                                 If the Border is opaque, it casts a shadow.
+                            -->
+                            <local:Ripple>
+                                <ContentPresenter HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center"
+                                                  Margin="{TemplateBinding Padding}"
+                                                  RecognizesAccessKey="True" />
+                            </local:Ripple>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.38" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Filled Button -->
+    <Style x:Key="MaterialDesignFilledButtonStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignBaseButtonStyle}">
+        <Setter Property="Background" Value="{DynamicResource MdSysColor.Primary}" />
+        <Setter Property="Foreground" Value="{DynamicResource MdSysColor.OnPrimary}" />
+        <Setter Property="helpers:ShadowAssist.Elevation" Value="Level0" /> <!-- Filled button has no shadow in default state in MD3? Actually it might have Level0 or 1. Spec says Level0. -->
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="helpers:ShadowAssist.Elevation" Value="Level1" />
+                <Setter Property="Background" Value="{DynamicResource MdSysColor.Primary}" /> <!-- Needs slightly lighter/darker overlay usually. Ripple handles the visual feedback, but hover state usually changes elevation + state layer. -->
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="helpers:ShadowAssist.Elevation" Value="Level0" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Elevated Button -->
+    <Style x:Key="MaterialDesignElevatedButtonStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignBaseButtonStyle}">
+        <Setter Property="Background" Value="{DynamicResource MdSysColor.SurfaceContainerLow}" />
+        <Setter Property="Foreground" Value="{DynamicResource MdSysColor.Primary}" />
+        <Setter Property="helpers:ShadowAssist.Elevation" Value="Level1" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="helpers:ShadowAssist.Elevation" Value="Level2" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="helpers:ShadowAssist.Elevation" Value="Level1" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Tonal Button (Filled Tonal) -->
+    <Style x:Key="MaterialDesignTonalButtonStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignBaseButtonStyle}">
+        <Setter Property="Background" Value="{DynamicResource MdSysColor.SecondaryContainer}" />
+        <Setter Property="Foreground" Value="{DynamicResource MdSysColor.OnSecondaryContainer}" />
+        <Setter Property="helpers:ShadowAssist.Elevation" Value="Level0" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="helpers:ShadowAssist.Elevation" Value="Level1" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Outlined Button -->
+    <Style x:Key="MaterialDesignOutlinedButtonStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignBaseButtonStyle}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource MdSysColor.Primary}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource MdSysColor.Outline}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource MdSysColor.SurfaceContainer}" /> <!-- Slight fill on hover? MD3 says state layer opacity. -->
+                <Setter Property="BorderBrush" Value="{DynamicResource MdSysColor.Outline}" />
+            </Trigger>
+             <Trigger Property="IsEnabled" Value="False">
+                 <Setter Property="BorderBrush" Value="{DynamicResource MdSysColor.OnSurface}" />
+                 <Setter Property="Opacity" Value="0.12" /> <!-- Border opacity -->
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Text Button -->
+    <Style x:Key="MaterialDesignTextButtonStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignBaseButtonStyle}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource MdSysColor.Primary}" />
+        <Setter Property="Padding" Value="12,0" /> <!-- Smaller padding -->
+    </Style>
+
+</ResourceDictionary>

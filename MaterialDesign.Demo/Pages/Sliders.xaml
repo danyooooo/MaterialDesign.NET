@@ -1,0 +1,57 @@
+<UserControl x:Class="MaterialDesign.Demo.Pages.Sliders"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MaterialDesign.Demo.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="16" MaxWidth="600" HorizontalAlignment="Left">
+                <TextBlock Text="Sliders" Style="{DynamicResource MdSysTypescale.DisplayMedium}" Margin="0,0,0,24" />
+                <TextBlock Text="Sliders allow users to make selections from a range of values." 
+                           Style="{DynamicResource MdSysTypescale.BodyMedium}" Margin="0,0,0,32" />
+
+                <!-- Continuous Slider -->
+                <TextBlock Text="Continuous Slider" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                <Slider Style="{DynamicResource MaterialDesignSlider}" 
+                        Minimum="0" Maximum="100" Value="50" 
+                        Margin="0,0,0,32" />
+
+                <!-- Discrete Slider -->
+                <TextBlock Text="Discrete Slider" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                <Slider Style="{DynamicResource MaterialDesignSlider}" 
+                        Minimum="0" Maximum="100" Value="30" 
+                        TickFrequency="10" IsSnapToTickEnabled="True" TickPlacement="BottomRight"
+                        Margin="0,0,0,32" />
+
+                <!-- Disabled Slider -->
+                <TextBlock Text="Disabled Slider" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                <Slider Style="{DynamicResource MaterialDesignSlider}" 
+                        Minimum="0" Maximum="100" Value="75" 
+                        IsEnabled="False"
+                        Margin="0,0,0,32" />
+
+                <!-- Volume Slider Example -->
+                 <TextBlock Text="Volume Example" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,16" />
+                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <!-- Volume Mute Icon (Placeholder or PackIcon if available in this namespace scope) -->
+                    <TextBlock Text="🔈" VerticalAlignment="Center" Margin="0,0,16,0"/>
+                    
+                    <Slider Grid.Column="1" Style="{DynamicResource MaterialDesignSlider}" 
+                            Minimum="0" Maximum="100" Value="40" />
+                            
+                    <!-- Volume Up Icon -->
+                    <TextBlock Grid.Column="2" Text="🔊" VerticalAlignment="Center" Margin="16,0,0,0"/>
+                 </Grid>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

@@ -1,0 +1,107 @@
+<UserControl x:Class="MaterialDesign.Demo.Pages.Palette"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:helpers="clr-namespace:MaterialDesign.NET.Helpers;assembly=MaterialDesign.NET"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="800">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="24">
+            <TextBlock Text="Color System" Style="{DynamicResource MdSysTypescale.DisplaySmall}" Margin="0,0,0,8" />
+            <TextBlock Text="Material Design 3 uses a dynamic color system derived from a source color." Style="{DynamicResource MdSysTypescale.BodyLarge}" Margin="0,0,0,32" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" TextWrapping="Wrap" />
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <!-- Key Colors - Primary -->
+                <StackPanel Grid.Column="0" Margin="0,0,16,0">
+                    <TextBlock Text="Primary" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,8"/>
+                    <Border Height="80" Background="{DynamicResource MdSysColor.Primary}" CornerRadius="16,16,4,4" Margin="0,0,0,4">
+                        <TextBlock Text="Primary" Foreground="{DynamicResource MdSysColor.OnPrimary}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Height="40" Background="{DynamicResource MdSysColor.OnPrimary}" CornerRadius="4,4,4,4" Margin="0,0,0,4">
+                        <TextBlock Text="On Primary" Foreground="{DynamicResource MdSysColor.Primary}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Height="60" Background="{DynamicResource MdSysColor.PrimaryContainer}" CornerRadius="4,4,16,16">
+                         <TextBlock Text="Primary Container" Foreground="{DynamicResource MdSysColor.OnPrimaryContainer}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </StackPanel>
+
+                 <!-- Key Colors - Secondary -->
+                <StackPanel Grid.Column="1" Margin="0,0,16,0">
+                    <TextBlock Text="Secondary" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,8"/>
+                    <Border Height="80" Background="{DynamicResource MdSysColor.Secondary}" CornerRadius="16,16,4,4" Margin="0,0,0,4">
+                        <TextBlock Text="Secondary" Foreground="{DynamicResource MdSysColor.OnSecondary}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Height="40" Background="{DynamicResource MdSysColor.OnSecondary}" CornerRadius="4,4,4,4" Margin="0,0,0,4">
+                        <TextBlock Text="On Secondary" Foreground="{DynamicResource MdSysColor.Secondary}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Height="60" Background="{DynamicResource MdSysColor.SecondaryContainer}" CornerRadius="4,4,16,16">
+                         <TextBlock Text="Secondary Container" Foreground="{DynamicResource MdSysColor.OnSecondaryContainer}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </StackPanel>
+
+                <!-- Key Colors - Tertiary -->
+                <StackPanel Grid.Column="2">
+                    <TextBlock Text="Tertiary" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,8"/>
+                    <Border Height="80" Background="{DynamicResource MdSysColor.Tertiary}" CornerRadius="16,16,4,4" Margin="0,0,0,4">
+                        <TextBlock Text="Tertiary" Foreground="{DynamicResource MdSysColor.OnTertiary}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Height="40" Background="{DynamicResource MdSysColor.OnTertiary}" CornerRadius="4,4,4,4" Margin="0,0,0,4">
+                        <TextBlock Text="On Tertiary" Foreground="{DynamicResource MdSysColor.Tertiary}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Height="60" Background="{DynamicResource MdSysColor.TertiaryContainer}" CornerRadius="4,4,16,16">
+                         <TextBlock Text="Tertiary Container" Foreground="{DynamicResource MdSysColor.OnTertiaryContainer}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </StackPanel>
+            </Grid>
+
+            <!-- Error & Surface -->
+             <Grid Margin="0,32,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                 <!-- Error -->
+                <StackPanel Grid.Column="0" Margin="0,0,16,0">
+                    <TextBlock Text="Error" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,8"/>
+                    <Border Height="80" Background="{DynamicResource MdSysColor.Error}" CornerRadius="16,16,4,4" Margin="0,0,0,4">
+                        <TextBlock Text="Error" Foreground="{DynamicResource MdSysColor.OnError}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                     <Border Height="60" Background="{DynamicResource MdSysColor.ErrorContainer}" CornerRadius="4,4,16,16">
+                         <TextBlock Text="Error Container" Foreground="{DynamicResource MdSysColor.OnErrorContainer}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </StackPanel>
+
+                 <!-- Surface -->
+                <StackPanel Grid.Column="1" Grid.ColumnSpan="2">
+                    <TextBlock Text="Surface" Style="{DynamicResource MdSysTypescale.TitleMedium}" Margin="0,0,0,8"/>
+                    <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="12" Padding="16">
+                        <WrapPanel>
+                            <Border Width="100" Height="60" Background="{DynamicResource MdSysColor.Surface}" Margin="0,0,8,8" CornerRadius="8" BorderBrush="{DynamicResource MdSysColor.Outline}" BorderThickness="1">
+                                <TextBlock Text="Surface" Foreground="{DynamicResource MdSysColor.OnSurface}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <Border Width="100" Height="60" Background="{DynamicResource MdSysColor.SurfaceVariant}" Margin="0,0,8,8" CornerRadius="8">
+                                <TextBlock Text="Surface Var" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <Border Width="100" Height="60" Background="{DynamicResource MdSysColor.InverseSurface}" Margin="0,0,8,8" CornerRadius="8">
+                                <TextBlock Text="Inverse" Foreground="{DynamicResource MdSysColor.InverseOnSurface}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                             <Border Width="100" Height="60" Background="{DynamicResource MdSysColor.Background}" Margin="0,0,8,8" CornerRadius="8" BorderBrush="{DynamicResource MdSysColor.Outline}" BorderThickness="1">
+                                <TextBlock Text="Background" Foreground="{DynamicResource MdSysColor.OnBackground}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </WrapPanel>
+                    </Border>
+                </StackPanel>
+            </Grid>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

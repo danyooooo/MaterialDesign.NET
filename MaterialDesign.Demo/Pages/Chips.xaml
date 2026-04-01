@@ -1,0 +1,71 @@
+<UserControl x:Class="MaterialDesign.Demo.Pages.Chips"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:helpers="clr-namespace:MaterialDesign.NET.Helpers;assembly=MaterialDesign.NET"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="800">
+    <ScrollViewer>
+        <StackPanel Margin="32">
+            <!-- Header -->
+            <TextBlock Text="Chips" Style="{DynamicResource MdSysTypescale.DisplayMedium}" Margin="0,0,0,8" />
+            <TextBlock Text="Chips help people enter information, make selections, filter content, or trigger actions." 
+                       Style="{DynamicResource MdSysTypescale.BodyLarge}" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" Margin="0,0,0,32" />
+
+            <!-- Assist Chips -->
+            <StackPanel Margin="0,0,0,32">
+                <TextBlock Text="Assist Chips" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Margin="0,0,0,16" />
+                <TextBlock Text="Assist chips represent smart or automated actions that can span multiple apps." Style="{DynamicResource MdSysTypescale.BodyMedium}" Margin="0,0,0,16" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" />
+                <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="12" Padding="24">
+                    <WrapPanel>
+                        <Button Style="{DynamicResource MaterialDesignAssistChipStyle}" Content="Add to calendar" helpers:ChipAssist.LeadingIcon="Calendar" Margin="0,0,8,0"/>
+                        <Button Style="{DynamicResource MaterialDesignAssistChipStyle}" Content="Share" Margin="0,0,8,0"/>
+                        <Button Style="{DynamicResource MaterialDesignAssistChipStyle}" Content="Disabled" IsEnabled="False" helpers:ChipAssist.LeadingIcon="Settings" Margin="0,0,8,0"/>
+                    </WrapPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Filter Chips -->
+            <StackPanel Margin="0,0,0,32">
+                <TextBlock Text="Filter Chips" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Margin="0,0,0,16" />
+                <TextBlock Text="Filter chips use tags or descriptive words to filter content." Style="{DynamicResource MdSysTypescale.BodyMedium}" Margin="0,0,0,16" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" />
+                <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="12" Padding="24">
+                    <WrapPanel>
+                        <ToggleButton Style="{DynamicResource MaterialDesignFilterChipStyle}" Content="Elevator" Margin="0,0,8,0"/>
+                        <ToggleButton Style="{DynamicResource MaterialDesignFilterChipStyle}" Content="Washer / Dryer" IsChecked="True" Margin="0,0,8,0"/>
+                        <ToggleButton Style="{DynamicResource MaterialDesignFilterChipStyle}" Content="Fireplace" helpers:ChipAssist.LeadingIcon="Check" Margin="0,0,8,0"/>
+                        <ToggleButton Style="{DynamicResource MaterialDesignFilterChipStyle}" Content="Disabled" IsEnabled="False" Margin="0,0,8,0"/>
+                    </WrapPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Input Chips -->
+            <StackPanel Margin="0,0,0,32">
+                <TextBlock Text="Input Chips" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Margin="0,0,0,16" />
+                <TextBlock Text="Input chips represent discrete pieces of information entered by a user." Style="{DynamicResource MdSysTypescale.BodyMedium}" Margin="0,0,0,16" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" />
+                <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="12" Padding="24">
+                    <WrapPanel>
+                        <Button Style="{DynamicResource MaterialDesignInputChipStyle}" Content="Seattle" helpers:ChipAssist.TrailingIcon="Close" Margin="0,0,8,0"/>
+                        <Button Style="{DynamicResource MaterialDesignInputChipStyle}" Content="Portland" helpers:ChipAssist.LeadingIcon="Check" helpers:ChipAssist.TrailingIcon="Close" Margin="0,0,8,0"/>
+                        <Button Style="{DynamicResource MaterialDesignInputChipStyle}" Content="San Francisco" helpers:ChipAssist.TrailingIcon="Close" IsEnabled="False" Margin="0,0,8,0"/>
+                    </WrapPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Suggestion Chips -->
+            <StackPanel Margin="0,0,0,32">
+                <TextBlock Text="Suggestion Chips" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Margin="0,0,0,16" />
+                <TextBlock Text="Suggestion chips help narrow down intent or generate opportunities." Style="{DynamicResource MdSysTypescale.BodyMedium}" Margin="0,0,0,16" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" />
+                <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="12" Padding="24">
+                    <WrapPanel>
+                        <Button Style="{DynamicResource MaterialDesignSuggestionChipStyle}" Content="Soft" Margin="0,0,8,0"/>
+                        <Button Style="{DynamicResource MaterialDesignSuggestionChipStyle}" Content="Medium" Margin="0,0,8,0"/>
+                        <Button Style="{DynamicResource MaterialDesignSuggestionChipStyle}" Content="Hard" Margin="0,0,8,0"/>
+                    </WrapPanel>
+                </Border>
+            </StackPanel>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

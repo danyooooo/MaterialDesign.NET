@@ -1,0 +1,22 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MaterialDesign.NET.Controls">
+
+    <Style TargetType="{x:Type local:Ripple}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:Ripple}">
+                    <Border Background="Transparent" 
+                            CornerRadius="{TemplateBinding CornerRadius}" 
+                            ClipToBounds="True">
+                        <Grid>
+                            <ContentPresenter Content="{TemplateBinding Content}" />
+                            <Canvas x:Name="PART_Layer" IsHitTestVisible="False" ClipToBounds="True" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

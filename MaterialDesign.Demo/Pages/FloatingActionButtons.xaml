@@ -1,0 +1,130 @@
+<UserControl x:Class="MaterialDesign.Demo.Pages.FloatingActionButtons"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:helpers="clr-namespace:MaterialDesign.NET.Helpers;assembly=MaterialDesign.NET"
+             xmlns:controls="clr-namespace:MaterialDesign.NET.Controls;assembly=MaterialDesign.NET"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="800">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="24">
+            <TextBlock Text="Floating Action Buttons" Style="{DynamicResource MdSysTypescale.DisplaySmall}" Margin="0,0,0,8" />
+            <TextBlock Text="A floating action button (FAB) represents the primary action of a screen." Style="{DynamicResource MdSysTypescale.BodyLarge}" Margin="0,0,0,32" Foreground="{DynamicResource MdSysColor.OnSurfaceVariant}" TextWrapping="Wrap" />
+
+            <!-- Standard FABs -->
+            <StackPanel Margin="0,0,0,32">
+                <TextBlock Text="Standard FAB" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Margin="0,0,0,16" />
+                <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="12" Padding="24">
+                    <StackPanel>
+                         <WrapPanel Margin="0,0,0,16">
+                            <StackPanel Margin="0,0,32,0">
+                                <TextBlock Text="Primary" Style="{DynamicResource MdSysTypescale.TitleSmall}" Margin="0,0,0,16" HorizontalAlignment="Center"/>
+                                <Button Style="{DynamicResource MaterialDesignFABStyle}">
+                                    <controls:PackIcon Kind="Add" Width="24" Height="24"/>
+                                </Button>
+                            </StackPanel>
+
+                             <StackPanel Margin="0,0,32,0">
+                                <TextBlock Text="Surface" Style="{DynamicResource MdSysTypescale.TitleSmall}" Margin="0,0,0,16" HorizontalAlignment="Center"/>
+                                <Button Style="{DynamicResource MaterialDesignSurfaceFABStyle}">
+                                    <controls:PackIcon Kind="Edit" Width="24" Height="24"/>
+                                </Button>
+                            </StackPanel>
+
+                             <StackPanel Margin="0,0,32,0">
+                                <TextBlock Text="Secondary" Style="{DynamicResource MdSysTypescale.TitleSmall}" Margin="0,0,0,16" HorizontalAlignment="Center"/>
+                                <Button Style="{DynamicResource MaterialDesignSecondaryFABStyle}">
+                                    <controls:PackIcon Kind="Favorite" Width="24" Height="24"/>
+                                </Button>
+                            </StackPanel>
+
+                            <StackPanel Margin="0,0,32,0">
+                                <TextBlock Text="Tertiary" Style="{DynamicResource MdSysTypescale.TitleSmall}" Margin="0,0,0,16" HorizontalAlignment="Center"/>
+                                <Button Style="{DynamicResource MaterialDesignTertiaryFABStyle}">
+                                    <controls:PackIcon Kind="Camera" Width="24" Height="24"/>
+                                </Button>
+                            </StackPanel>
+                        </WrapPanel>
+                        
+                        <Expander Header="Source Code">
+                            <TextBox Style="{DynamicResource MaterialDesignOutlinedTextBoxStyle}"
+                                     helpers:TextFieldAssist.Label="XAML"
+                                     IsReadOnly="True"
+                                     AcceptsReturn="True"
+                                     Height="80"
+                                     VerticalScrollBarVisibility="Auto"
+                                     FontFamily="Consolas"
+                                     FontSize="12"
+                                     Text="&lt;Button Style=&quot;{DynamicResource MaterialDesignFABStyle}&quot;&gt;&#x0a;    &lt;controls:MaterialSymbolIcon Kind=&quot;Add&quot; /&gt;&#x0a;&lt;/Button&gt;" />
+                        </Expander>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Small & Large -->
+            <StackPanel Margin="0,0,0,32">
+                <TextBlock Text="Sizes" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Margin="0,0,0,16" />
+                <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="12" Padding="24">
+                    <StackPanel>
+                         <WrapPanel Margin="0,0,0,16">
+                            <StackPanel Margin="0,0,32,0" VerticalAlignment="Center">
+                                <TextBlock Text="Small" Style="{DynamicResource MdSysTypescale.TitleSmall}" Margin="0,0,0,16" HorizontalAlignment="Center"/>
+                                <Button Style="{DynamicResource MaterialDesignSmallFABStyle}">
+                                    <controls:PackIcon Kind="Add" Width="20" Height="20"/>
+                                </Button>
+                            </StackPanel>
+
+                             <StackPanel Margin="0,0,32,0" VerticalAlignment="Center">
+                                <TextBlock Text="Standard" Style="{DynamicResource MdSysTypescale.TitleSmall}" Margin="0,0,0,16" HorizontalAlignment="Center"/>
+                                <Button Style="{DynamicResource MaterialDesignFABStyle}">
+                                    <controls:PackIcon Kind="Add" Width="24" Height="24"/>
+                                </Button>
+                            </StackPanel>
+
+                             <StackPanel Margin="0,0,32,0" VerticalAlignment="Center">
+                                <TextBlock Text="Large" Style="{DynamicResource MdSysTypescale.TitleSmall}" Margin="0,0,0,16" HorizontalAlignment="Center"/>
+                                <Button Style="{DynamicResource MaterialDesignLargeFABStyle}">
+                                    <controls:PackIcon Kind="Add" Width="48" Height="48"/>
+                                </Button>
+                            </StackPanel>
+                        </WrapPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Extended FAB -->
+            <StackPanel Margin="0,0,0,32">
+                <TextBlock Text="Extended FAB" Style="{DynamicResource MdSysTypescale.HeadlineSmall}" Margin="0,0,0,16" />
+                <Border Background="{DynamicResource MdSysColor.SurfaceContainer}" CornerRadius="12" Padding="24">
+                    <StackPanel>
+                         <WrapPanel Margin="0,0,0,16">
+                             <Button Style="{DynamicResource MaterialDesignExtendedFABStyle}" Margin="0,0,24,0">
+                                 <StackPanel Orientation="Horizontal"><TextBlock Text="New Task" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.LabelLarge}" />
+                                 </StackPanel>
+                             </Button>
+
+                             <Button Style="{DynamicResource MaterialDesignExtendedFABStyle}" Margin="0,0,24,0">
+                                 <StackPanel Orientation="Horizontal"><TextBlock Text="Edit Item" VerticalAlignment="Center" Style="{DynamicResource MdSysTypescale.LabelLarge}" />
+                                 </StackPanel>
+                             </Button>
+                        </WrapPanel>
+
+                        <Expander Header="Source Code">
+                            <TextBox Style="{DynamicResource MaterialDesignOutlinedTextBoxStyle}"
+                                     helpers:TextFieldAssist.Label="XAML"
+                                     IsReadOnly="True"
+                                     AcceptsReturn="True"
+                                     Height="80"
+                                     VerticalScrollBarVisibility="Auto"
+                                     FontFamily="Consolas"
+                                     FontSize="12"
+                                     Text="&lt;Button Style=&quot;{DynamicResource MaterialDesignExtendedFABStyle}&quot;&gt;&#x0a;    &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;&#x0a;        &lt;controls:MaterialSymbolIcon Kind=&quot;Add&quot; Margin=&quot;0,0,12,0&quot; /&gt;&#x0a;        &lt;TextBlock Text=&quot;New Task&quot; /&gt;&#x0a;    &lt;/StackPanel&gt;&#x0a;&lt;/Button&gt;" />
+                        </Expander>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

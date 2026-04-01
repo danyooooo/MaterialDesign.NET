@@ -1,0 +1,106 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MaterialDesign.NET.Controls"
+                    xmlns:helpers="clr-namespace:MaterialDesign.NET.Helpers">
+
+    <!-- Base Icon Button Style -->
+    <Style x:Key="MaterialDesignIconButtonBaseStyle" TargetType="Button">
+        <Setter Property="FontFamily" Value="{DynamicResource MdRefTypeface.Brand}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="{DynamicResource MdRefTypeface.WeightMedium}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="helpers:ShadowAssist.Elevation" Value="Level0" />
+        
+        <Setter Property="Width" Value="40" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Padding" Value="8" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border x:Name="Border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="{DynamicResource MdSysShape.CornerFull}">
+                            <local:Ripple>
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  RecognizesAccessKey="True" />
+                            </local:Ripple>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.38" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Standard Icon Button (Default) -->
+    <!-- Usage: Style="{DynamicResource MaterialDesignIconButtonStyle}" -->
+    <Style x:Key="MaterialDesignIconButtonStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignIconButtonBaseStyle}">
+        <Setter Property="Foreground" Value="{DynamicResource MdSysColor.OnSurfaceVariant}" />
+        <Setter Property="helpers:ShadowAssist.Elevation" Value="Level0" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource MdSysColor.SurfaceContainerHighest}" /> <!-- State Layer simulation -->
+                <Setter Property="Foreground" Value="{DynamicResource MdSysColor.OnSurface}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource MdSysColor.OnSurface}" />
+            </Trigger>
+             <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource MdSysColor.OnSurface}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Filled Icon Button -->
+    <Style x:Key="MaterialDesignFilledIconButtonStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignIconButtonBaseStyle}">
+        <Setter Property="Background" Value="{DynamicResource MdSysColor.Primary}" />
+        <Setter Property="Foreground" Value="{DynamicResource MdSysColor.OnPrimary}" />
+        <Setter Property="helpers:ShadowAssist.Elevation" Value="Level0" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                 <!-- Elevation? MD3 Filled Icon Button has no elevation by default, maybe on hover? No, just state layer. -->
+                 <!-- But for visual feedback let's assume standard button behavior or just color change -->
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Filled Tonal Icon Button -->
+    <Style x:Key="MaterialDesignFilledTonalIconButtonStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignIconButtonBaseStyle}">
+        <Setter Property="Background" Value="{DynamicResource MdSysColor.SecondaryContainer}" />
+        <Setter Property="Foreground" Value="{DynamicResource MdSysColor.OnSecondaryContainer}" />
+        <Setter Property="helpers:ShadowAssist.Elevation" Value="Level0" />
+    </Style>
+
+    <!-- Outlined Icon Button -->
+    <Style x:Key="MaterialDesignOutlinedIconButtonStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignIconButtonBaseStyle}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource MdSysColor.OnSurfaceVariant}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource MdSysColor.Outline}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Style.Triggers>
+             <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource MdSysColor.SurfaceContainerHighest}" /> <!-- State layer -->
+                <Setter Property="Foreground" Value="{DynamicResource MdSysColor.OnSurface}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource MdSysColor.OnSurface}" /> <!-- Sometimes outline gets darker -->
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                 <Setter Property="BorderBrush" Value="{DynamicResource MdSysColor.OnSurface}" />
+                 <Setter Property="Foreground" Value="{DynamicResource MdSysColor.OnSurface}" />
+                 <Setter Property="Opacity" Value="0.12" /> <!-- Border opacity 0.12 -->
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

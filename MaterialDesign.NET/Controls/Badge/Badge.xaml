@@ -1,0 +1,66 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MaterialDesign.NET.Controls"
+                    xmlns:converters="clr-namespace:MaterialDesign.NET.Converters">
+
+    <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
+    <Style x:Key="MaterialDesignBadge" TargetType="{x:Type local:Badge}">
+        <Setter Property="BadgeBackground" Value="{DynamicResource MdSysColor.Error}" />
+        <Setter Property="BadgeForeground" Value="{DynamicResource MdSysColor.OnError}" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:Badge}">
+                    <Grid>
+                        <!-- Main Content (e.g. Icon) -->
+                        <ContentPresenter Content="{TemplateBinding Content}" />
+
+                        <!-- Badge Overlay -->
+                        <Grid HorizontalAlignment="Right" VerticalAlignment="Top" 
+                              Margin="0,-4,-4,0"
+                              Visibility="{TemplateBinding ShowBadge, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            
+                            <!-- Large Badge (Label) -->
+                            <Border Background="{TemplateBinding BadgeBackground}"
+                                    CornerRadius="8"
+                                    MinWidth="16" Height="16"
+                                    Padding="4,0"
+                                    Visibility="{TemplateBinding BadgeContent, Converter={StaticResource NullToVisibilityConverter}}">
+                                <TextBlock Text="{TemplateBinding BadgeContent}"
+                                           Foreground="{TemplateBinding BadgeForeground}"
+                                           FontSize="11"
+                                           FontWeight="Medium"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center" />
+                            </Border>
+
+                            <!-- Small Badge (Dot) - shown when Content is null -->
+                            <Border Background="{TemplateBinding BadgeBackground}"
+                                    CornerRadius="3"
+                                    Width="6" Height="6"
+                                    Margin="4"
+                                    x:Name="SmallBadge">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding BadgeContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource NullToVisibilityConverter}}" Value="Visible">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:Badge}" BasedOn="{StaticResource MaterialDesignBadge}" />
+
+</ResourceDictionary>

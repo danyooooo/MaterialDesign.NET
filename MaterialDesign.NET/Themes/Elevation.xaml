@@ -1,0 +1,39 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Material Design 3 Elevation Tokens -->
+    <!-- _md-sys-elevation.scss equivalent -->
+
+    <DropShadowEffect x:Key="MdSysElevation.Level0" Opacity="0" />
+
+    <DropShadowEffect x:Key="MdSysElevation.Level1" 
+                      BlurRadius="3" 
+                      ShadowDepth="1" 
+                      Direction="270" 
+                      Opacity="0.2" />
+
+    <DropShadowEffect x:Key="MdSysElevation.Level2" 
+                      BlurRadius="6" 
+                      ShadowDepth="3" 
+                      Direction="270" 
+                      Opacity="0.2" />
+
+    <DropShadowEffect x:Key="MdSysElevation.Level3" 
+                      BlurRadius="12" 
+                      ShadowDepth="6" 
+                      Direction="270" 
+                      Opacity="0.2" />
+
+    <DropShadowEffect x:Key="MdSysElevation.Level4" 
+                      BlurRadius="16" 
+                      ShadowDepth="8" 
+                      Direction="270" 
+                      Opacity="0.2" />
+
+    <DropShadowEffect x:Key="MdSysElevation.Level5" 
+                      BlurRadius="24" 
+                      ShadowDepth="12" 
+                      Direction="270" 
+                      Opacity="0.2" />
+
+</ResourceDictionary>
